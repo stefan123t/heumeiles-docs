@@ -1,0 +1,34 @@
+site_name: Ahoy Docs
+
+site_url: https://stefan123t.github.io/ahoy-docs/
+repo_url: https://github.com/stefan123t/ahoy-docs
+edit_uri: https://github.com/stefan123t/ahoy-docs/edit/main/docs
+
+theme: 
+  name: readthedocs
+
+plugins:
+    - search
+    - awesome-pages:
+        filename: nav.yml
+
+# The navigation is configured in the docs/nav.yml file!
+
+extra_javascript:
+    - https://unpkg.com/mermaid@8.8.2/dist/mermaid.min.js
+
+markdown_extensions:
+  - attr_list # Needed to scale images
+  - pymdownx.emoji: # Emoji support
+      emoji_generator: !!python/name:pymdownx.emoji.to_alt
+  - pymdownx.superfences:
+      # make exceptions to highlighting of code:
+      custom_fences:
+        - name: mermaid2
+          class: mermaid2
+          format: !!python/name:mermaid2.fence_mermaid_custom
+          # format: !!python/name:pymdownx.superfences.fence_code_format
+  - markdown.extensions.admonition
+  - def_list
+  #- mermaid2
+

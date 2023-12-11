@@ -1,0 +1,12 @@
+CMT2300A Breakout Board
+
+1 GND
+2 VCC +3.3V
+3 CSB
+4 FCSB
+5 CLK
+6 SDIO
+7 GPIO2
+8 GPIO3
+
+
