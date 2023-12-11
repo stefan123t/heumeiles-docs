@@ -5,19 +5,6 @@ nav:
   # List all files in the expected order
   - Getting Started:
     - index.md
-    - faq-frequently-asked-questions.md
-    - getting-started-ahoy.md
-    - getting-started-ESP8266.md
-    - hardware-serial-numbers.md
-    - coding-guidelines.md
-    - display-pinouts.md
-    - hoymiles-format-description.md
-    - mi-inverter.md
-    - prometheus_ep_description.md
-    - protocol.md
-    - readme-ahoy.md
-    - rf-module-cmt2300a.md
-    - user-manual-ahoy.md
 
   - External Links:
     - Releases: https://github.com/lumapu/ahoy/releases
@@ -26,14 +13,24 @@ nav:
     - Join a Discussion: https://github.com/lumapu/ahoy/discussions
 
   - Hardware:
+    - getting-started-ESP8266.md
+    - hardware-serial-numbers.md
     - cmt2300a-breakout-board.md
+    - rf-module-cmt2300a.md
     - ESP-DTU_Platinenlayout.md
+    - display-pinouts.md
 
   - Software:
     - getting-started-ahoy.md
+    - coding-guidelines.md
+    - readme-ahoy.md
+    - prometheus_ep_description.md
+    - user-manual-ahoy.md
 
   - Hoymiles:
     - hoymiles-format-description.md
+    - protocol.md
+    - mi-inverter.md
     - mi-inverter-dtu-wlite.md
     - hm-inverter-dtu-pro.md
     - hms-hmt-inverter-dtu-pro-s.md
@@ -45,6 +42,8 @@ nav:
   - Smart Home:
     - smart-home.md
 
+  - Troubleshooting:
+    - faq-frequently-asked-questions.md
 
   - Old Pages (no longer maintained):
     - outdated--Integrated-Functions.md

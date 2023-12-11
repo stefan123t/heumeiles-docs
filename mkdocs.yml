@@ -6,6 +6,7 @@ edit_uri: https://github.com/stefan123t/heumeiles-docs/edit/main/docs
 
 theme: 
   name: readthedocs
+  custom_dir: readthedocs-mod/
 
 plugins:
     - search
