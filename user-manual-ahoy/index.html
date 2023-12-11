@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://stefan123t.github.io/heumeiles-docs/user-manual-ahoy/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>User Manual AhoyDTU (on ESP8266) - Ahoy Docs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "User Manual AhoyDTU (on ESP8266)";
+        var mkdocs_page_input_path = "user-manual-ahoy.md";
+        var mkdocs_page_url = "/heumeiles-docs/user-manual-ahoy/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+<img src=https://stefan123t.github.io/heumeiles-docs//img/logo.png>
+    <a href=".." class="icon icon-home"> Ahoy Docs
+</a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="..">Welcome to MkDocs</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">External Links</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="" href="https://github.com/lumapu/ahoy/releases">Releases</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="https://lumapu.github.io/ahoy/index.html">Web Installer/Console</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="https://github.com/lumapu/ahoy/issues">Create an Issue</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="https://github.com/lumapu/ahoy/discussions">Join a Discussion</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Hardware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../getting-started-ESP8266/">Getting Started with an ESP8266</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../hardware-serial-numbers/">Hardware Serial Numbers</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../rf-module-cmt2300a/">Rf module cmt2300a</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../display-pinouts/">Display pinouts</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Software</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../getting-started-ahoy/">Getting Started with Ahoy</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../coding-guidelines/">Coding guidelines</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../readme-ahoy/">Readme ahoy</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../prometheus_ep_description/">Prometheus Endpoint</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">User Manual AhoyDTU (on ESP8266)</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#mqtt-publish">MQTT Publish</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#topic">&lt;TOPIC&gt;/#</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#topicinverter_name_from_setup">&lt;TOPIC&gt;/&lt;INVERTER_NAME_FROM_SETUP&gt;/#</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#topicinverter_name_from_setupch0">&lt;TOPIC&gt;/&lt;INVERTER_NAME_FROM_SETUP&gt;/ch0/#</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#topicinverter_name_from_setupchchannel_number">&lt;TOPIC&gt;/&lt;INVERTER_NAME_FROM_SETUP&gt;/ch&lt;CHANNEL_NUMBER&gt;/#</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#active-power-limit-via-serial-control-page">Active Power Limit via Serial / Control Page</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#control-via-mqtt">Control via MQTT</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#generic-information">Generic Information</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#inverter-restart">Inverter restart</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#power-limit-relative-non-persistent">Power Limit relative (non persistent) [%]</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#power-limit-absolute-non-persistent-watts">Power Limit absolute (non persistent) [Watts]</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#power-limit-persistent">Power Limit persistent</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#control-via-rest-api">Control via REST API</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#generic-information_1">Generic Information</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#inverter-power-on-off">Inverter Power (On / Off)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#inverter-restart_1">Inverter restart</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#power-limit-relative-persistent">Power Limit relative persistent [%]</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#power-limit-absolute-persistent-watts">Power Limit absolute persistent [Watts]</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#power-limit-relative-non-persistent_1">Power Limit relative non persistent [%]</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#power-limit-absolute-non-persistent-watts_1">Power Limit absolute non persistent [Watts]</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#developer-information-rest-api-obsolete">Developer Information REST API (obsolete)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#zero-export-control-needs-rework">Zero Export Control (needs rework)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#firmware-version-collection">Firmware Version collection</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#developer-information-about-command-queue">Developer Information about Command Queue</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to">How To</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#sunrise-sunset">Sunrise &amp; Sunset</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#commands-and-informations">Commands and informations</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#update-your-ahoy-dtu-firmware">Update your AHOY-DTU Firmware</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#additional-notes">Additional Notes</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#mi-inverters">MI Inverters</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Hoymiles</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../hoymiles-format-description/">Hoymiles Format Description</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../protocol/">Protocol</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mi-inverter/">Mi inverter</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Protocol</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../protocol/">Protocol</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Troubleshooting</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../faq-frequently-asked-questions/">FAQ Häufig gestellte Fragen</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Assorted Pages</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Hardware</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Hardware/ESP-DTU_Platinenlayout/">ESP DTU Platinenlayout</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Hardware/cmt2300a-breakout-board/">Cmt2300a breakout board</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Hoymiles</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Hoymiles/hm-inverter-dtu-pro/">Hm inverter dtu pro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Hoymiles/hms-hmt-inverter-dtu-pro-s/">Hms hmt inverter dtu pro s</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Hoymiles/hms-wifi-inverter-dtu-bi/">Hms wifi inverter dtu bi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Hoymiles/mi-inverter-dtu-wlite/">Mi inverter dtu wlite</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Ahoy Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>Software &raquo;</li>
+      <li class="breadcrumb-item active">User Manual AhoyDTU (on ESP8266)</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/stefan123t/heumeiles-docs/edit/main/docs/user-manual-ahoy.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="user-manual-ahoydtu-on-esp8266">User Manual AhoyDTU (on ESP8266)</h1>
+<p>Version #{VERSION}#</p>
+<h2 id="introduction">Introduction</h2>
+<p>See the repository <a href="Getting_Started.md">README.md</a></p>
+<h2 id="setup">Setup</h2>
+<p>Assuming you have a running ahoy-dtu and you can access the setup page.
+In the initial case or after click "erase settings" the fields for the inverter setup are empty.</p>
+<p>Set at least the serial number and a name for each inverter, check "reboot after save" and click the "Save" button.</p>
+<h2 id="mqtt-publish">MQTT Publish</h2>
+<p>The AhoyDTU will publish on the following topics</p>
+<h3 id="topic"><code>&lt;TOPIC&gt;/#</code></h3>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Example Value</th>
+<th>Remarks</th>
+<th>Retained</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>comm_start</code></td>
+<td>1672123767</td>
+<td>inverter communication start, based on sunrise, UTC timestamp</td>
+<td>true</td>
+</tr>
+<tr>
+<td><code>comm_stop</code></td>
+<td>1672155709</td>
+<td>inverter communication stop, based on sunset, UTC timestamp</td>
+<td>true</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td>AHOY-DTU</td>
+<td>configured device name</td>
+<td>true</td>
+</tr>
+<tr>
+<td><code>dis_night_comm</code></td>
+<td>true</td>
+<td>setting if night communication is disabled</td>
+<td>true</td>
+</tr>
+<tr>
+<td><code>free_heap</code></td>
+<td>17784</td>
+<td>free heap of ESP in bytes</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>mqtt</code></td>
+<td>connected</td>
+<td>shows MQTT status</td>
+<td>true</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>1</td>
+<td>see table below</td>
+<td>true</td>
+</tr>
+<tr>
+<td><code>sunrise</code></td>
+<td>1672124667</td>
+<td>sunrise, UTC timestamp</td>
+<td>true</td>
+</tr>
+<tr>
+<td><code>sunset</code></td>
+<td>1672154809</td>
+<td>sunset, UTC timestamp</td>
+<td>true</td>
+</tr>
+<tr>
+<td><code>uptime</code></td>
+<td>73630</td>
+<td>uptime in seconds</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>version</code></td>
+<td>0.5.61</td>
+<td>current installed verison of AhoyDTU</td>
+<td>true</td>
+</tr>
+<tr>
+<td><code>wifi_rssi</code></td>
+<td>-75</td>
+<td>WiFi signal strength</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>ip_addr</code></td>
+<td>192.168.178.25</td>
+<td>WiFi Station IP Address</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>status code</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>offline</td>
+</tr>
+<tr>
+<td>1</td>
+<td>partial</td>
+</tr>
+<tr>
+<td>2</td>
+<td>online</td>
+</tr>
+</tbody>
+</table>
+<h3 id="topicinverter_name_from_setup"><code>&lt;TOPIC&gt;/&lt;INVERTER_NAME_FROM_SETUP&gt;/#</code></h3>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Example Value</th>
+<th>Remarks</th>
+<th>Retained</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>available</code></td>
+<td>2</td>
+<td>see table below</td>
+<td>true</td>
+</tr>
+<tr>
+<td><code>last_success</code></td>
+<td>1672155690</td>
+<td>UTC Timestamp</td>
+<td>true</td>
+</tr>
+<tr>
+<td><code>ack_pwr_limit</code></td>
+<td>true</td>
+<td>fast information if inverter has accepted power limit</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>status code</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>off: not available and not producing</td>
+</tr>
+<tr>
+<td>1</td>
+<td>available but not producing</td>
+</tr>
+<tr>
+<td>2</td>
+<td>available and producing</td>
+</tr>
+<tr>
+<td>3</td>
+<td>available and was producing</td>
+</tr>
+<tr>
+<td>4</td>
+<td>was available</td>
+</tr>
+</tbody>
+</table>
+<h3 id="topicinverter_name_from_setupch0"><code>&lt;TOPIC&gt;/&lt;INVERTER_NAME_FROM_SETUP&gt;/ch0/#</code></h3>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Example Value</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>U_AC</td>
+<td>233.300</td>
+<td>actual AC Voltage in Volt</td>
+</tr>
+<tr>
+<td>I_AC</td>
+<td>0.300</td>
+<td>actual AC Current in Ampere</td>
+</tr>
+<tr>
+<td>P_AC</td>
+<td>71.000</td>
+<td>actual AC Power in Watt</td>
+</tr>
+<tr>
+<td>Q_AC</td>
+<td>21.200</td>
+<td>actual AC reactive power in var</td>
+</tr>
+<tr>
+<td>F_AC</td>
+<td>49.990</td>
+<td>actual AC Frequency in Hz</td>
+</tr>
+<tr>
+<td>PF_AC</td>
+<td>95.800</td>
+<td>actual AC Power factor</td>
+</tr>
+<tr>
+<td>Temp</td>
+<td>19.800</td>
+<td>Temperature of inverter in degree Celsius</td>
+</tr>
+<tr>
+<td>EVT</td>
+<td>9.000</td>
+<td>Last Event/Alarm Message Index</td>
+</tr>
+<tr>
+<td>YieldDay</td>
+<td>51.000</td>
+<td>Energy converted to AC per day in Watt hours (measured on DC)</td>
+</tr>
+<tr>
+<td>YieldTotal</td>
+<td>465.294</td>
+<td>Energy converted to AC since reset Watt hours (measured on DC)</td>
+</tr>
+<tr>
+<td>P_DC</td>
+<td>74.600</td>
+<td>actual DC Power in Watt</td>
+</tr>
+<tr>
+<td>Efficiency</td>
+<td>95.174</td>
+<td>actual ration AC Power over DC Power in percent</td>
+</tr>
+<tr>
+<td>FWVersion</td>
+<td>10012.000</td>
+<td>Firmware version eg. 1.00.12</td>
+</tr>
+<tr>
+<td>FWBuildYear</td>
+<td>2020.000</td>
+<td>Firmware build date</td>
+</tr>
+<tr>
+<td>FWBuildMonthDay</td>
+<td>624.000</td>
+<td>Firmware build month and day eg. 24th of june</td>
+</tr>
+<tr>
+<td>HWPartId</td>
+<td>100.000</td>
+<td>Hardware Id</td>
+</tr>
+<tr>
+<td>PowerLimit</td>
+<td>80.000</td>
+<td>actual set point for power limit control AC active power in percent</td>
+</tr>
+<tr>
+<td>LastAlarmCode</td>
+<td>1.000</td>
+<td>Last Alarm Code eg. "inverter start"</td>
+</tr>
+</tbody>
+</table>
+<h3 id="topicinverter_name_from_setupchchannel_number"><code>&lt;TOPIC&gt;/&lt;INVERTER_NAME_FROM_SETUP&gt;/ch&lt;CHANNEL_NUMBER&gt;/#</code></h3>
+<p><code>&lt;CHANNEL_NUMBER&gt;</code> is in the range 1 to 4 depending on the inverter type</p>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Example Value</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>U_DC</td>
+<td>38.900</td>
+<td>actual DC Voltage in Volt</td>
+</tr>
+<tr>
+<td>I_DC</td>
+<td>0.640</td>
+<td>actual DC current in Ampere</td>
+</tr>
+<tr>
+<td>P_DC</td>
+<td>25.000</td>
+<td>actual DC power in Watt</td>
+</tr>
+<tr>
+<td>YieldDay</td>
+<td>17.000</td>
+<td>Energy converted to AC per day Watt hours per module/channel (measured on DC)</td>
+</tr>
+<tr>
+<td>YieldTotal</td>
+<td>110.819</td>
+<td>Energy converted to AC since reset Watt hours per module/channel (measured on DC)</td>
+</tr>
+<tr>
+<td>Irradiation</td>
+<td>5.65</td>
+<td>ratio DC Power over set maximum power per module/channel in percent</td>
+</tr>
+</tbody>
+</table>
+<h2 id="active-power-limit-via-serial-control-page">Active Power Limit via Serial / Control Page</h2>
+<p>URL: <code>/serial</code></p>
+<p>You can change the setting in the following manner.
+Decide if you want to set</p>
+<ul>
+<li>an absolute value in Watt</li>
+<li>an relative value in percent based on the maximum Power capabilities of the inverter</li>
+</ul>
+<p>and if this settings shall be</p>
+<ul>
+<li>persistent</li>
+<li>not persistent</li>
+</ul>
+<p>after a power cycle of the inverter (P_DC=0 and P_AC=0 for at least 10 seconds)</p>
+<p>The user has to ensure correct settings. Remember that for the inverters of 3rd generation the relative active power limit is in the range of 2% up to 100%.
+Also an absolute active power limit below approx. 30 Watt seems to be not meanful because of the control capabilities and reactive power load.</p>
+<h2 id="control-via-mqtt">Control via MQTT</h2>
+<h3 id="generic-information">Generic Information</h3>
+<p>The AhoyDTU subscribes on following topics:</p>
+<ul>
+<li><code>&lt;TOPIC&gt;/ctrl/limit/&lt;INVERTER_ID&gt;</code></li>
+<li><code>&lt;TOPIC&gt;/ctrl/restart/&lt;INVERTER_ID&gt;</code></li>
+<li><code>&lt;TOPIC&gt;/setup/set_time</code></li>
+</ul>
+<p>👆 <code>&lt;TOPIC&gt;</code> can be set on setup page, default is <code>inverter</code>.</p>
+<p>👆 <code>&lt;INVERTER_ID&gt;</code> is the number of the specific inverter in the setup page.</p>
+<h3 id="inverter-restart">Inverter restart</h3>
+<p><div class="highlight"><pre><span></span><code>&lt;TOPIC&gt;/ctrl/restart/&lt;INVERTER_ID&gt;
+</code></pre></div>
+Example:
+<div class="highlight"><pre><span></span><code>inverter/ctrl/restart/0
+</code></pre></div></p>
+<h3 id="power-limit-relative-non-persistent">Power Limit relative (non persistent) [%]</h3>
+<p><div class="highlight"><pre><span></span><code>&lt;TOPIC&gt;/ctrl/limit/&lt;INVERTER_ID&gt;
+</code></pre></div>
+with a payload <code>[2 .. 100]</code></p>
+<p><strong>NOTE: optional a <code>%</code> can be sent as last character</strong></p>
+<p>Example:
+<div class="highlight"><pre><span></span><code>inverter/ctrl/limit/0     70
+</code></pre></div></p>
+<h3 id="power-limit-absolute-non-persistent-watts">Power Limit absolute (non persistent) [Watts]</h3>
+<p><div class="highlight"><pre><span></span><code>&lt;TOPIC&gt;/ctrl/limit/&lt;INVERTER_ID&gt;
+</code></pre></div>
+with a payload <code>[0 .. 65535]</code></p>
+<p><strong>NOTE: the unit <code>W</code> is necessary to determine an absolute limit</strong></p>
+<p>Example:
+<div class="highlight"><pre><span></span><code>inverter/ctrl/limit/0     600W
+</code></pre></div></p>
+<h3 id="power-limit-persistent">Power Limit persistent</h3>
+<p>This feature was removed. The persisten limit should not be modified cyclic by a script because of potential wearout of the flash inside the inverter.</p>
+<h2 id="control-via-rest-api">Control via REST API</h2>
+<h3 id="generic-information_1">Generic Information</h3>
+<p>The rest API works with <em>JSON</em> POST requests. All the following instructions must be sent to the <code>/api</code> endpoint of the AhoyDTU.</p>
+<p>👆 <code>&lt;INVERTER_ID&gt;</code> is the number of the specific inverter in the setup page.</p>
+<h3 id="inverter-power-on-off">Inverter Power (On / Off)</h3>
+<p><div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">&lt;INVERTER_ID&gt;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;cmd&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;power&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">&lt;VALUE&gt;</span>
+<span class="p">}</span>
+</code></pre></div>
+The <code>&lt;VALUE&gt;</code> should be set to <code>1</code> = <code>ON</code> and <code>0</code> = <code>OFF</code></p>
+<h3 id="inverter-restart_1">Inverter restart</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">&lt;INVERTER_ID&gt;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;cmd&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;restart&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="power-limit-relative-persistent">Power Limit relative persistent [%]</h3>
+<p><div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">&lt;INVERTER_ID&gt;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;cmd&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;limit_persistent_relative&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">&lt;VALUE&gt;</span>
+<span class="p">}</span>
+</code></pre></div>
+The <code>VALUE</code> represents a percent number in a range of <code>[2 .. 100]</code></p>
+<h3 id="power-limit-absolute-persistent-watts">Power Limit absolute persistent [Watts]</h3>
+<p><div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">&lt;INVERTER_ID&gt;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;cmd&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;limit_persistent_absolute&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">&lt;VALUE&gt;</span>
+<span class="p">}</span>
+</code></pre></div>
+The <code>VALUE</code> represents watts in a range of <code>[0 .. 65535]</code></p>
+<h3 id="power-limit-relative-non-persistent_1">Power Limit relative non persistent [%]</h3>
+<p><div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">&lt;INVERTER_ID&gt;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;cmd&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;limit_nonpersistent_relative&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">&lt;VALUE&gt;</span>
+<span class="p">}</span>
+</code></pre></div>
+The <code>VALUE</code> represents a percent number in a range of <code>[2 .. 100]</code></p>
+<h3 id="power-limit-absolute-non-persistent-watts_1">Power Limit absolute non persistent [Watts]</h3>
+<p><div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">&lt;INVERTER_ID&gt;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;cmd&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;limit_nonpersistent_absolute&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">&lt;VALUE&gt;</span>
+<span class="p">}</span>
+</code></pre></div>
+The <code>VALUE</code> represents watts in a range of <code>[0 .. 65535]</code></p>
+<h3 id="developer-information-rest-api-obsolete">Developer Information REST API (obsolete)</h3>
+<p>In the same approach as for MQTT any other SubCmd and also MainCmd can be applied and the response payload can be observed in the serial logs. Eg. request the Alarm-Data from the Alarm-Index 5 from inverter 0 will look like this:
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;inverter&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;tx_request&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;cmd&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;payload&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;payload2&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h2 id="zero-export-control-needs-rework">Zero Export Control (needs rework)</h2>
+<ul>
+<li>You can use the mqtt topic <code>&lt;TOPIC&gt;/devcontrol/&lt;INVERTER_ID&gt;/11</code> with a number as payload (eg. 300 -&gt; 300 Watt) to set the power limit to the published number in Watt. (In regular cases the inverter will use the new set point within one intervall period; to verify this see next bullet)</li>
+<li>You can check the inverter set point for the power limit control on the topic <code>&lt;TOPIC&gt;/&lt;INVERTER_NAME_FROM_SETUP&gt;/ch0/PowerLimit</code> 👆 This value is ALWAYS in percent of the maximum power limit of the inverter. In regular cases this value will be updated within approx. 15 seconds. (depends on request intervall)</li>
+<li>You can monitor the actual AC power by subscribing to the topic <code>&lt;TOPIC&gt;/&lt;INVERTER_NAME_FROM_SETUP&gt;/ch0/P_AC</code> 👆 This value is ALWAYS in Watt</li>
+</ul>
+<h2 id="firmware-version-collection">Firmware Version collection</h2>
+<p>Gather user inverter information here to understand what differs between some inverters.
+To get the information open the URL <code>/api/record/info</code> on your AhoyDTU. The information will only be present once the AhoyDTU was able to communicate with an inverter.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Inverter Typ</th>
+<th>Bootloader V.</th>
+<th>FWVersion</th>
+<th>FWBuild [YYYY]</th>
+<th>FWBuild [MM-DD]</th>
+<th>HWPartId</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DanielR92</td>
+<td>HM-1500</td>
+<td></td>
+<td>1.0.16</td>
+<td>2021</td>
+<td>10-12</td>
+<td>100</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>isdor</td>
+<td>HM-300</td>
+<td></td>
+<td>1.0.14</td>
+<td>2021</td>
+<td>12-09</td>
+<td>102</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>aschiffler</td>
+<td>HM-1500</td>
+<td></td>
+<td>1.0.12</td>
+<td>2020</td>
+<td>06-24</td>
+<td>100</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>klahus1</td>
+<td>HM-300</td>
+<td></td>
+<td>1.0.10</td>
+<td>2020</td>
+<td>07-07</td>
+<td>102</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>roku133</td>
+<td>HM-400</td>
+<td></td>
+<td>1.0.10</td>
+<td>2020</td>
+<td>07-07</td>
+<td>102</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>eeprom23</td>
+<td>HM-1200</td>
+<td>0.1.0</td>
+<td>1.0.18</td>
+<td>2021</td>
+<td>12-24</td>
+<td>269619201</td>
+<td>18:21:00</td>
+<td>HWRev 256</td>
+</tr>
+<tr>
+<td>eeprom23</td>
+<td>HM-1200 2t</td>
+<td>0.1.0</td>
+<td>1.0.16</td>
+<td>2021</td>
+<td>10-12</td>
+<td>269619207</td>
+<td>17:06:00</td>
+<td>HWRev 256</td>
+</tr>
+<tr>
+<td>fila612</td>
+<td>HM-700</td>
+<td></td>
+<td>1.0.10</td>
+<td>2021</td>
+<td>11-01</td>
+<td>104</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>tfhcm</td>
+<td>TSUN-350</td>
+<td></td>
+<td>1.0.14</td>
+<td>2021</td>
+<td>12-09</td>
+<td>102</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Groobi</td>
+<td>TSOL-M400</td>
+<td></td>
+<td>1.0.14</td>
+<td>2021</td>
+<td>12-09</td>
+<td>102</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>setje</td>
+<td>HM-600</td>
+<td></td>
+<td>1.0.08</td>
+<td>2020</td>
+<td>07-10</td>
+<td>104</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>madmartin</td>
+<td>HM-600</td>
+<td>0.1.4</td>
+<td>1.0.10</td>
+<td>2021</td>
+<td>11-01</td>
+<td>104</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>lumapu</td>
+<td>HM-1200</td>
+<td>0.1.0</td>
+<td>1.0.12</td>
+<td>2020</td>
+<td>06-24</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>chehrlic</td>
+<td>HM-600</td>
+<td></td>
+<td>1.0.10</td>
+<td>2021</td>
+<td>11-01</td>
+<td>104</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>chehrlic</td>
+<td>TSOL-M800de</td>
+<td></td>
+<td>1.0.10</td>
+<td>2021</td>
+<td>11-01</td>
+<td>104</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>B5r1oJ0A9G</td>
+<td>HM-800</td>
+<td></td>
+<td>1.0.10</td>
+<td>2021</td>
+<td></td>
+<td>104</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>B5r1oJ0A9G</td>
+<td>HM-800</td>
+<td></td>
+<td>1.0.10</td>
+<td>2021</td>
+<td></td>
+<td>104</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>tomquist</td>
+<td>TSOL-M1600</td>
+<td></td>
+<td>1.0.12</td>
+<td>2020</td>
+<td>06-24</td>
+<td>100</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>rejoe2</td>
+<td>MI-600</td>
+<td></td>
+<td>236</td>
+<td>2018</td>
+<td>11-27</td>
+<td>17</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>rejoe2</td>
+<td>MI-1500</td>
+<td></td>
+<td>1.0.12</td>
+<td>2020</td>
+<td>06-24</td>
+<td>100</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>dragricola</td>
+<td>HM-1200</td>
+<td></td>
+<td>1.0.16</td>
+<td>2021</td>
+<td>10-12</td>
+<td>100</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>dragricola</td>
+<td>MI-300</td>
+<td></td>
+<td>230</td>
+<td>2017</td>
+<td>08-08</td>
+<td>1</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="developer-information-about-command-queue">Developer Information about Command Queue</h2>
+<p>After reboot or startup the ahoy firmware it will enque three commands in the following sequence:</p>
+<ol>
+<li>Get active power limit in percent (<code>SystemConfigPara = 5 // 0x05</code>)</li>
+<li>Get firmware version (<code>InverterDevInform_All = 1 // 0x01</code>)</li>
+<li>Get data (<code>RealTimeRunData_Debug = 11 // 0x0b</code>)</li>
+</ol>
+<p>With the command get data (<code>RealTimeRunData_Debug = 11 // 0x0b</code>) the alarm message counter will be updated. In the initial case then aonther command is queued to get the alarm code (<code>AlarmData = 17 // 0x11</code>).</p>
+<p>This command (<code>AlarmData = 17 // 0x11</code>) will enqued in any operation phase if alarm message counter is raised by one or greater compared to the last request with command get data (<code>RealTimeRunData_Debug = 11 // 0x0b</code>)</p>
+<p>In case all commands are processed (<code>_commandQueue.empty() == true</code>) then as a default command the get data (<code>RealTimeRunData_Debug = 11 // 0x0b</code>) will be enqueued.</p>
+<p>In case a Device Control command (Power Limit, Off, On) is requested via MQTT or REST API this request will be send before any other enqueued command.
+In case of a accepted change in power limit the command  get active power limit in percent (<code>SystemConfigPara = 5 // 0x05</code>) will be enqueued. The acceptance is checked by the reponse packets on the devive control commands (tx id 0x51 --&gt; rx id 0xD1) if in byte 12 the requested sub-command (eg. power limit) is present.</p>
+<h2 id="how-to">How To</h2>
+<h3 id="sunrise-sunset">Sunrise &amp; Sunset</h3>
+<p>In order to display the sunrise and sunset on the start page, the location coordinates (latitude and longitude) must be set in decimal in the setup under Sunrise &amp; Sunset. If the coordinates are set, the current sunrise and sunset are calculated and displayed daily.
+If this is set, you can also tick "disable night communication", then sending to the inverter is switched off outside of the day (i.e. at night), this avoids unnecessary communication attempts and thus also the incrementing of "RX no anwser".
+Here you can get easy your GeoLocation: <a href="https://www.mapsdirections.info/en/gps-coordinates.html">https://www.mapsdirections.info/en/gps-coordinates.html</a></p>
+<h3 id="commands-and-informations">Commands and informations</h3>
+<p>Turn On - turns on the inverter/feeder (LED flashes green if there is no error)
+Turn Off - switches off the inverter/feeder (LED flashes fast red), can be switched on again with Turn On or by disconnecting and reconnecting the DC voltage
+Restart - restarts the microcontroller in the inverter, which deletes the error memory and the YieldDay values, feed-in stops briefly and starts with the last persistent limit
+Send Power Limit:
+- A limitation of the AC power can be sent in relative (in %) or in absolute (Watt).
+- It can be set to a different value non-persistently (temporarily) at any time (regardless of what you have set for persistent), this should be normal in order to limit the power (zero feed/battery control) and does not damage the EEPROM in the WR either.
+- With persistent you send a saving limit (only use it seldom, otherwise the EEPROM in the HM can break!), This is then used as the next switch-on limit when DC comes on, i.e. when the sun comes up early or the WR on batteries is switched on the limit is applied immediately when sending, like any other, but it is stored in the EEPROM of the WR.
+- A persistent limit is only needed if you want to throttle your inverter permanently or you can use it to set a start value on the battery, which is then always the switch-on limit when switching on, otherwise it would ramp up to 100% without regulation, which is continuous load is not healthy.
+- You can set a new limit in the turn-off state, which is then used for on (switching on again), otherwise the last limit from before the turn-off is used, but of course this only applies if DC voltage is applied the whole time.
+- If the DC voltage is missing for a few seconds, the microcontroller in the inverter goes off and forgets everything that was temporary/non-persistent in the RAM: YieldDay, error memory, non-persistent limit.</p>
+<h3 id="update-your-ahoy-dtu-firmware">Update your AHOY-DTU Firmware</h3>
+<p>To update your AHOY-DTU, you have to download the latest firmware package.
+Here are the <a href="https://github.com/lumapu/ahoy/releases/">latest stable releases</a> and <a href="https://nightly.link/lumapu/ahoy/workflows/compile_development/development03/ahoydtu_dev.zip">latest development builds</a> available for download.
+As soon as you have downloaded the firmware package, unzip it. On the WebUI, navigate to Update and press on select firmware file.
+From the unzipped files, select the right .bin file for your hardware and needs.
+- If you use an ESP8266, select the file ending with esp8266.bin 
+- If you use an ESP8266 with prometheus, select the file ending with esp8266_prometheus.bin 
+- If you use an ESP32, select the file ending with esp32.bin
+- If you use an ESP32 with prometheus, select the file ending with esp32_prometheus.bin</p>
+<p>Note: if you want to use prometheus, the usage of an ESP32 is recommended, since the ESP8266 is at its performance limits and therefore can cause stability issues.</p>
+<p>After selecting the right firmware file, press update. Your AHOY-DTU will now install the new firmware and reboot.</p>
+<h2 id="additional-notes">Additional Notes</h2>
+<h3 id="mi-inverters">MI Inverters</h3>
+<ul>
+<li>AhoyDTU supports MI type inverters as well, since dev. version 0.5.70.</li>
+<li>MI inverters are known to be delivered with two different generations of firmwares: inverters with serial numbers 10x2 already use the 3rd generation protocol and behave just like the newer HM models, <em>the follwoing remarks do not apply to these</em>.</li>
+<li>Older MI inverters (#sn 10x1) use a different rf protocol and thus do not deliver exactly the same data. E.g. the AC power value will therefore be calculated by AhoyDTU itself, while other values might not be available at all.</li>
+<li>Single and dual channel 2nd gen. devices seem not to accept power limiting commands at all, the lower limit for 4-channel MI is 10% (instead of 2% for newer models)</li>
+<li>4-channel MI type inverters might work, but code still is untested.</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../prometheus_ep_description/" class="btn btn-neutral float-left" title="Prometheus Endpoint"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../hoymiles-format-description/" class="btn btn-neutral float-right" title="Hoymiles Format Description">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/stefan123t/heumeiles-docs" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../prometheus_ep_description/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../hoymiles-format-description/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://unpkg.com/mermaid@8.8.2/dist/mermaid.min.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

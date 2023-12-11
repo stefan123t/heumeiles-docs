@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://stefan123t.github.io/heumeiles-docs/getting-started-ahoy/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Getting Started with Ahoy - Ahoy Docs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Getting Started with Ahoy";
+        var mkdocs_page_input_path = "getting-started-ahoy.md";
+        var mkdocs_page_url = "/heumeiles-docs/getting-started-ahoy/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+<img src=https://stefan123t.github.io/heumeiles-docs//img/logo.png>
+    <a href=".." class="icon icon-home"> Ahoy Docs
+</a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="..">Welcome to MkDocs</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">External Links</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="" href="https://github.com/lumapu/ahoy/releases">Releases</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="https://lumapu.github.io/ahoy/index.html">Web Installer/Console</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="https://github.com/lumapu/ahoy/issues">Create an Issue</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="https://github.com/lumapu/ahoy/discussions">Join a Discussion</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Hardware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../getting-started-ESP8266/">Getting Started with an ESP8266</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../hardware-serial-numbers/">Hardware Serial Numbers</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../rf-module-cmt2300a/">Rf module cmt2300a</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../display-pinouts/">Display pinouts</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Software</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Getting Started with Ahoy</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#compatiblity">Compatiblity</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#things-needed">Things needed</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#there-are-fake-nrf24l01-modules-out-there">There are fake NRF24L01+ Modules out there</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#wiring-things-up">Wiring things up</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#esp8266-wiring-example-on-wemos-d1">ESP8266 wiring example on WEMOS D1</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#schematic">Schematic</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#symbolic-view">Symbolic view</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#esp8266-wiring-example-on-30pin-lolin-nodemcu-v3">ESP8266 wiring example on 30pin Lolin NodeMCU v3</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#schematic_1">Schematic</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#symbolic-view_1">Symbolic view</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#esp32-wiring-example">ESP32 wiring example</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#schematic_2">Schematic</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#symbolic-view_2">Symbolic view</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#esp32-gpio-settings">ESP32 GPIO settings</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#flash-the-firmware-on-your-ahoy-dtu-hardware">Flash the Firmware on your Ahoy DTU Hardware</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#flash-from-your-browser-easy">Flash from your browser (easy)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#compiling-your-own-version">Compiling your own Version</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#optional-configuration-before-compilation">Optional Configuration before compilation</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#using-a-ready-to-flash-binary-using-nodemcu-pyflasher">Using a ready-to-flash binary using nodemcu-pyflasher</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#flashing-on-linux-with-esptoolpy-esp32">Flashing on Linux with esptool.py (ESP32)</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#connect-to-your-ahoy-dtu">Connect to your Ahoy DTU</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#your-ahoy-dtu-is-very-verbose-using-the-serial-console">Your Ahoy DTU is very verbose using the Serial Console</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#connect-to-the-ahoy-dtu-webinterface-using-your-browser">Connect to the Ahoy DTU Webinterface using your Browser</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#http-based-pages">HTTP based Pages</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#mqtt-command-to-set-the-dtu-without-webinterface">MQTT command to set the DTU without webinterface</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#used-libraries">Used Libraries</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#todo">ToDo</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../coding-guidelines/">Coding guidelines</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../readme-ahoy/">Readme ahoy</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../prometheus_ep_description/">Prometheus Endpoint</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../user-manual-ahoy/">User Manual AhoyDTU (on ESP8266)</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Hoymiles</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../hoymiles-format-description/">Hoymiles Format Description</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../protocol/">Protocol</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mi-inverter/">Mi inverter</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Protocol</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../protocol/">Protocol</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Troubleshooting</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../faq-frequently-asked-questions/">FAQ Häufig gestellte Fragen</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Assorted Pages</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Hardware</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Hardware/ESP-DTU_Platinenlayout/">ESP DTU Platinenlayout</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Hardware/cmt2300a-breakout-board/">Cmt2300a breakout board</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Hoymiles</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Hoymiles/hm-inverter-dtu-pro/">Hm inverter dtu pro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Hoymiles/hms-hmt-inverter-dtu-pro-s/">Hms hmt inverter dtu pro s</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Hoymiles/hms-wifi-inverter-dtu-bi/">Hms wifi inverter dtu bi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Hoymiles/mi-inverter-dtu-wlite/">Mi inverter dtu wlite</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Ahoy Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>Software &raquo;</li>
+      <li class="breadcrumb-item active">Getting Started with Ahoy</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/stefan123t/heumeiles-docs/edit/main/docs/getting-started-ahoy.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="getting-started-with-ahoy">Getting Started with Ahoy</h1>
+<h2 id="overview">Overview</h2>
+<p>On this page, you'll find detailed instructions on how to wire the module of a Wemos D1 mini or ESP32 to the radio module, as well as how to flash it with the latest firmware. This information will enable you to communicate with compatible inverters.</p>
+<p>You find the full <a href="User_Manual.md">User_Manual here</a></p>
+<h2 id="compatiblity">Compatiblity</h2>
+<p>The following inverters are currently supported out of the box:</p>
+<p>Hoymiles Inverters</p>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Serie</th>
+<th>Model</th>
+<th>comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✔️</td>
+<td>MI</td>
+<td>300, 600, 1000/1200/⚠️ 1500</td>
+<td>4-Channel is not tested yet</td>
+</tr>
+<tr>
+<td>✔️</td>
+<td>HM</td>
+<td>300, 350, 400, 600, 700, 800, 1000?, 1200, 1500</td>
+<td></td>
+</tr>
+<tr>
+<td>✔️</td>
+<td>HMS</td>
+<td>350, 500, 800, 1000, 1600, 1800, 2000</td>
+<td></td>
+</tr>
+<tr>
+<td>✔️</td>
+<td>HMT</td>
+<td>1600, 1800, 2250</td>
+<td></td>
+</tr>
+<tr>
+<td>⚠️</td>
+<td>TSUN</td>
+<td><a href="https://www.tsun-ess.com/Micro-Inverter/M350-M400">TSOL-M350</a>, <a href="https://www.tsun-ess.com/Micro-Inverter/M350-M400">TSOL-M400</a>, <a href="https://www.tsun-ess.com/Micro-Inverter/M800">TSOL-M800/TSOL-M800(DE)</a></td>
+<td>others may work as well (need to be verified).</td>
+</tr>
+</tbody>
+</table>
+<!--
+## Table of Contents
+
+- [Table of Contents](#table-of-contents)
+- [Overview](#overview)
+- [Compatiblity](#compatiblity)
+- [Things needed](#things-needed)
+    - [There are fake NRF24L01+ Modules out there](#there-are-fake-nrf24l01-modules-out-there)
+- [Wiring things up](#wiring-things-up)
+    - [ESP8266 wiring example on WEMOS D1](#esp8266-wiring-example)
+      - [Schematic](#schematic)
+      - [Symbolic view](#symbolic-view)
+    - [ESP8266 wiring example on 30pin Lolin NodeMCU v3](#esp8266-wiring-example-2)
+      - [Schematic](#schematic-2)
+      - [Symbolic view](#symbolic-view-2)
+    - [ESP32 wiring example](#esp32-wiring-example)
+      - [Schematic](#schematic-1)
+      - [Symbolic view](#symbolic-view-1)
+      - [ESP32 GPIO settings](#esp32-gpio-settings)
+- [Flash the Firmware on your Ahoy DTU Hardware](#flash-the-firmware-on-your-ahoy-dtu-hardware)
+    - [Compiling your own Version](#compiling-your-own-version)
+      - [Optional Configuration before compilation](#optional-configuration-before-compilation)
+    - [Using a ready-to-flash binary using nodemcu-pyflasher](#using-a-ready-to-flash-binary-using-nodemcu-pyflasher)
+- [Connect to your Ahoy DTU](#connect-to-your-ahoy-dtu)
+    - [Your Ahoy DTU is very verbose using the Serial Console](#your-ahoy-dtu-is-very-verbose-using-the-serial-console)
+    - [Connect to the Ahoy DTU Webinterface using your Browser](#connect-to-the-ahoy-dtu-webinterface-using-your-browser)
+      - [HTTP based Pages](#http-based-pages)
+- [MQTT command to set the DTU without webinterface](#mqtt-command-to-set-the-dtu-without-webinterface)
+- [Used Libraries](#used-libraries)
+- [ToDo](#todo)
+
+***
+-->
+
+<p>Solenso Inverters:</p>
+<ul>
+<li>SOL-H350</li>
+</ul>
+<h2 id="things-needed">Things needed</h2>
+<p>If you're interested in building your own AhoyDTU, you'll need a few things to get started. While we've provided a list of recommended boards below, keep in mind that the maker community is constantly developing new and innovative options that we may not have covered in this readme..</p>
+<p>For optimal performance, we recommend using a Wemos D1 mini or ESP32 along with a NRF24L01+ breakout board as a bare minimum. However, if you have experience working with other ESP boards, any board with at least 4MBytes of ROM may be suitable, depending on your skills.</p>
+<p>Just be sure that the NRF24L01+ module you choose includes the "+" in its name, as we rely on the 250kbps features that are only provided by the plus-variant.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Parts</strong></th>
+<th><strong>Price</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D1 ESP8266 Mini WLAN Board Microcontroller</td>
+<td>4,40 Euro</td>
+</tr>
+<tr>
+<td>NRF24L01+ SMD Modul 2,4 GHz Wi-Fi Funkmodul</td>
+<td>3,45 Euro</td>
+</tr>
+<tr>
+<td>100µF / 10V Capacitor Kondensator</td>
+<td>0,15 Euro</td>
+</tr>
+<tr>
+<td>Jumper Wire Steckbrücken Steckbrett weiblich-weiblich</td>
+<td>2,49 Euro</td>
+</tr>
+<tr>
+<td><strong>Total costs</strong></td>
+<td><strong>10,34 Euro</strong></td>
+</tr>
+</tbody>
+</table>
+<p>If you're interested in using our sister project OpenDTU or you want to future-proof your setup, we recommend investing in an ESP32 board that features two CPU cores. As Radio you can also use a NRF24L01+ module with an external antenna. While this option may cost a bit more, it will provide superior performance and ensure compatibility with upcoming developments.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Parts</strong></th>
+<th><strong>Price</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ESP32 Dev Board NodeMCU WROOM32 WiFi</td>
+<td>7,90 Euro</td>
+</tr>
+<tr>
+<td>NRF24L01+ PA LNA SMA mit Antenne Long</td>
+<td>4,50 Euro</td>
+</tr>
+<tr>
+<td>100µF / 10V Capacitor Kondensator</td>
+<td>0,15 Euro</td>
+</tr>
+<tr>
+<td>Jumper Wire Steckbrücken Steckbrett weiblich-weiblich</td>
+<td>2,49 Euro</td>
+</tr>
+<tr>
+<td><strong>Total costs</strong></td>
+<td><strong>14,89 Euro</strong></td>
+</tr>
+</tbody>
+</table>
+<h4 id="there-are-fake-nrf24l01-modules-out-there">There are fake NRF24L01+ Modules out there</h4>
+<p>Watch out, there are some fake NRF24L01+ Modules out there that seem to use rebranded NRF24L01 Chips (without the +).<br/>
+An example can be found in <a href="https://github.com/lumapu/ahoy/issues/230">Issue #230</a>.<br/>
+You are welcome to add more examples of faked chips. We will add that information here.<br/></p>
+<p>Some users reported better connection or longer range through more walls when using the
+"E01-ML01DP5" EBYTE 2,4 GHz Wireless Modul nRF24L01 + PA + LNA RF Modul, SMA-K Antenna connector,
+which has an eye-catching HF cover. But beware: It comes without the antenna!</p>
+<p>In any case you should stabilize the Vcc power by a capacitor and don't exceed the Amplifier Power Level "LOW".
+Users reporting good connection over 10m through walls / ceilings with Amplifier Power Level "MIN".
+It is not always the bigger the better...</p>
+<p>Power levels "HIGH" and "MAX" are meant to wirings where the nRF24 is supplied by an extra 3.3 Volt regulator.
+The bultin regulator on ESP boards has only low reserves in case WiFi and nRF are sending simultaneously.
+If you operate additional interfaces like a display, the reserve is again reduced.</p>
+<h2 id="wiring-things-up">Wiring things up</h2>
+<p>The NRF24L01+ radio module is connected to the standard SPI pins:</p>
+<ul>
+<li>SCLK (Signal Clock),</li>
+<li>MISO (Master In Slave Out) and</li>
+<li>MOSI (Master Out Slave In)</li>
+</ul>
+<p><em>These pins need to be configured in the config.h.</em></p>
+<p>Additional, there are 3 pins, which can be set individual:</p>
+<ul>
+<li>CS (Chip Select),</li>
+<li>CE (Chip Enable) and</li>
+<li>IRQ (Interrupt)</li>
+</ul>
+<p><em>These pins can be changed from the /setup URL.</em></p>
+<h4 id="esp8266-wiring-example-on-wemos-d1">ESP8266 wiring example on WEMOS D1</h4>
+<p>This is an example wiring using a Wemos D1 mini.<br></p>
+<h5 id="schematic">Schematic</h5>
+<p><img alt="Schematic" src="doc/AhoyWemos_Schaltplan.jpg" /></p>
+<h5 id="symbolic-view">Symbolic view</h5>
+<p><img alt="Symbolic" src="doc/AhoyWemos_Steckplatine.jpg" /></p>
+<h4 id="esp8266-wiring-example-on-30pin-lolin-nodemcu-v3">ESP8266 wiring example on 30pin Lolin NodeMCU v3</h4>
+<p>This is an example wiring using a NodeMCU V3.<br></p>
+<h5 id="schematic_1">Schematic</h5>
+<p><img alt="Schematic" src="doc/ESP8266_nRF24L01+_Schaltplan.jpg" /></p>
+<h5 id="symbolic-view_1">Symbolic view</h5>
+<p><img alt="Symbolic" src="doc/ESP8266_nRF24L01+_bb.png" /></p>
+<h4 id="esp32-wiring-example">ESP32 wiring example</h4>
+<p>Example wiring for a 38pin ESP32 module</p>
+<h5 id="schematic_2">Schematic</h5>
+<p><img alt="Schematic" src="doc/Wiring_ESP32_Schematic.png" /></p>
+<h5 id="symbolic-view_2">Symbolic view</h5>
+<p><img alt="Symbolic" src="doc/Wiring_ESP32_Symbol.png" /></p>
+<h5 id="esp32-gpio-settings">ESP32 GPIO settings</h5>
+<p>CS, CE, IRQ must be set according to how they are wired up. For the diagram above, set the 3 individual GPIOs under the /setup URL as follows:</p>
+<div class="highlight"><pre><span></span><code>CS   D1 (GPIO5)
+CE   D2 (GPIO4)
+IRQ  D0 (GPIO16 - no IRQ!)
+</code></pre></div>
+<p>IMPORTANT: From development version 108/release 0.6.0 onwards, also MISO, MOSI, and SCLK
+are configurable. On new installations, their defaults are correct for most ESP32 boards.
+These pins cannot be configured for ESP82xx boards, as this chip cannot move them elsewhere.</p>
+<p>If you are upgrading an existing install though, you might see that these pins are set to '0' in the web GUI. 
+Communication with the NRF module wont work. For upgrading an existing installations, set MISO=19, MOSI=23, SCLK=18 in the settings. 
+This is the correct default for most ESP32 boards. On ESP82xx, simply saving the settings without changes should suffice.
+Save and reboot.</p>
+<h2 id="flash-the-firmware-on-your-ahoy-dtu-hardware">Flash the Firmware on your Ahoy DTU Hardware</h2>
+<p>Once your Hardware is ready to run, you need to flash the Ahoy DTU Firmware to your Board.
+You can either build your own using your own configuration or use one of our pre-compiled generic builds.</p>
+<h3 id="flash-from-your-browser-easy">Flash from your browser (easy)</h3>
+<p>The easiest step for you is to flash online. A browser MS Edge or Google Chrome is required.
+<a href="https://ahoydtu.de/web_install/">Here you go</a></p>
+<h3 id="compiling-your-own-version">Compiling your own Version</h3>
+<p>This information suits you if you want to configure and build your own firmware.</p>
+<p>This code comes to you as a <strong>PlatformIO</strong> project and can be compiled using the <strong>PlatformIO</strong> Addon.<br/>
+Visual Studio Code, AtomIDE and other IDE's support the PlatformIO Addon.<br/>
+If you do not want to compile your own build, you can use one of our ready-to-flash binaries.</p>
+<h5 id="optional-configuration-before-compilation">Optional Configuration before compilation</h5>
+<ul>
+<li>number of supported inverters (set to 3 by default) <code>config.h</code></li>
+<li>DTU radio id <code>config.h</code> (default = 1234567801)</li>
+<li>unformatted list in webbrowser <code>/livedata</code> <code>config.h</code>, <code>LIVEDATA_VISUALIZED</code></li>
+</ul>
+<p>Alternativly, instead of modifying <code>config.h</code>, <code>config_override_example.h</code> can be copied to <code>config_override.h</code> and customized.
+config_override.h is excluded from version control and stays local.</p>
+<h4 id="using-a-ready-to-flash-binary-using-nodemcu-pyflasher">Using a ready-to-flash binary using nodemcu-pyflasher</h4>
+<p>This information suits you if you just want to use an easy way.</p>
+<ol>
+<li>download the flash-tool <a href="https://github.com/marcelstoer/nodemcu-pyflasher">nodemcu-pyflasher</a></li>
+<li>download latest release bin-file from <a href="https://github.com/grindylow/ahoy/releases">ahoy_</a></li>
+<li>open flash-tool and connect the target device to your computer.</li>
+<li>Set the correct serial port and select the correct *.bin file</li>
+<li>click on "Flash NodeMCU"</li>
+<li>flash the ESP with the compiled firmware using the UART pins or</li>
+<li>repower the ESP</li>
+<li>the ESP will start as access point (AP) if there is no network config stored in its eeprom</li>
+<li>connect to the AP (password: <code>esp_8266</code>), you will be forwarded to the setup page</li>
+<li>configure your WiFi settings, save, repower</li>
+<li>check your router or serial console for the IP address of the module. You can try ping the configured device name as well.</li>
+</ol>
+<p>Once your Ahoy DTU is running, you can use the Over The Air (OTA) capabilities to update your firmware.</p>
+<p>! ATTENTION: If you update from a very low version to the newest, please make sure to wipe all flash data!</p>
+<h4 id="flashing-on-linux-with-esptoolpy-esp32">Flashing on Linux with <code>esptool.py</code> (ESP32)</h4>
+<ol>
+<li>install <a href="https://docs.espressif.com/projects/esptool/en/latest/esp32/">esptool.py</a> if you haven't already.</li>
+<li>download and extract the latest release bin-file from <a href="https://github.com/grindylow/ahoy/releases">ahoy_</a></li>
+<li><code>cd ahoy_v&lt;XXX&gt; &amp;&amp; cp *esp32.bin esp32.bin</code></li>
+<li>Perhaps you need to replace <code>/dev/ttyUSB0</code> to match your acual device in the following command. Execute it afterwards: <code>esptool.py --port /dev/ttyUSB0 --chip esp32 --before default_reset --after hard_reset   write_flash --flash_mode dout --flash_freq 40m --flash_size detect   0x1000 bootloader.bin   0x8000 partitions.bin   0x10000 esp32.bin</code></li>
+<li>Unplug and replug your device.</li>
+<li>Open a serial monitor (e.g. Putty) @ 115200 Baud. You should see some messages regarding wifi.</li>
+</ol>
+<h2 id="connect-to-your-ahoy-dtu">Connect to your Ahoy DTU</h2>
+<p>When everything is wired up and the firmware is flashed, it is time to connect to your Ahoy DTU.</p>
+<h4 id="your-ahoy-dtu-is-very-verbose-using-the-serial-console">Your Ahoy DTU is very verbose using the Serial Console</h4>
+<p>When connected to your computer, you can open a Serial Console to obtain additional information.<br/>
+ This might be useful in case of any troubles that might occur as well as to simply<br/>
+ obtain information about the converted values which were read out of the inverter(s).</p>
+<h4 id="connect-to-the-ahoy-dtu-webinterface-using-your-browser">Connect to the Ahoy DTU Webinterface using your Browser</h4>
+<p>After you have sucessfully flashed and powered your Ahoy DTU, you can access it via your Browser.<br/>
+ If your Ahoy DTU was able to log into the configured WiFi Network, it will try to obtain an IP-Address<br/>
+ from your local DHCP Server (in most cases thats your Router).<br/><br/>
+ In case it could not connect to your configured Network, it will provide its own WiFi Network that you can<br/>
+ connect to for furter configuration.<br/>
+ The WiFi SSID <em>(the WiFi Name)</em> and Passwort is configured in the config.h and defaults to the SSID "<code>AHOY-DTU</code>" with the Passwort "<code>esp_8266</code>".<br/>
+ The Ahoy DTU will keep that Network open for a certain amount of time (also configurable in the config.h and defaults to 60secs).<br/>
+ If nothing connects to it and that time runs up, it will retry to connect to the configured network an so on.<br/>
+ <br/>
+ If connected to your local Network, you just have to find out the used IP Address or try the default name <a href="http://ahoy-dtu/">http://ahoy-dtu/</a>. In most cases your Router will give you a hint.<br/>
+ If you connect to the WiFi the Ahoy DTU opens in case it could not connect to any other Network, the IP-Address of your Ahoy DTU is <a href="http://192.168.4.1/">http://192.168.4.1/</a>.<br/>
+ Just open the IP-Address in your browser.<br/>
+ <br/>
+ The webinterface has the following abilities:</p>
+<ul>
+<li>OTA Update (Over The Air Update)</li>
+<li>Configuration (Wifi, inverter(s), NTP Server, Pinout, MQTT, Amplifier Power Level, Debug)</li>
+<li>visual display of the connected inverters / modules</li>
+<li>some statistics about communication (debug)</li>
+</ul>
+<h5 id="http-based-pages">HTTP based Pages</h5>
+<p>To take control of your Ahoy DTU, you can directly call one of the following sub-pages (e.g. <a href="http://ahoy-dtu/setup">http://ahoy-dtu/setup</a> or <a href="http://192.168.4.1/setup">http://192.168.4.1/setup</a> ).<br/></p>
+<table>
+<thead>
+<tr>
+<th>page</th>
+<th>use</th>
+<th>output</th>
+<th>default availability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/uptime</td>
+<td>displays the uptime uf your Ahoy DTU</td>
+<td>0 Days, 01:37:34; now: 2022-08-21 11:13:53</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>/reboot</td>
+<td>reboots the Ahoy DTU</td>
+<td></td>
+<td>yes</td>
+</tr>
+<tr>
+<td>/erase</td>
+<td>erases the EEPROM</td>
+<td></td>
+<td>yes</td>
+</tr>
+<tr>
+<td>/factory</td>
+<td>resets to the factory defaults configured in config.h</td>
+<td></td>
+<td>yes</td>
+</tr>
+<tr>
+<td>/setup</td>
+<td>opens the setup page</td>
+<td></td>
+<td>yes</td>
+</tr>
+<tr>
+<td>/save</td>
+<td></td>
+<td></td>
+<td>yes</td>
+</tr>
+<tr>
+<td>/cmdstat</td>
+<td>show stat from the home page</td>
+<td></td>
+<td>yes</td>
+</tr>
+<tr>
+<td>/visualization</td>
+<td>displays the information from your converter</td>
+<td></td>
+<td>yes</td>
+</tr>
+<tr>
+<td>/livedata</td>
+<td>displays the live data</td>
+<td></td>
+<td>yes</td>
+</tr>
+<tr>
+<td>/metrics</td>
+<td>gets live-data for prometheus</td>
+<td>prometheus metrics from the livedata</td>
+<td>no - enable via config_override.h</td>
+</tr>
+<tr>
+<td>/api</td>
+<td>gets configuration and live-data in JSON format</td>
+<td>json output from the configuration or livedata</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mqtt-command-to-set-the-dtu-without-webinterface">MQTT command to set the DTU without webinterface</h2>
+<p><a href="User_Manual.md">Read here</a></p>
+<h2 id="used-libraries">Used Libraries</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>version</th>
+<th>License</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ESP8266WiFi</code></td>
+<td>1.0</td>
+<td>LGPL-2.1</td>
+</tr>
+<tr>
+<td><code>DNSServer</code></td>
+<td>1.1.1</td>
+<td>LGPL-2.1</td>
+</tr>
+<tr>
+<td><code>SPI</code></td>
+<td>1.0</td>
+<td>LGPL-2.1</td>
+</tr>
+<tr>
+<td><code>Hash</code></td>
+<td>1.0</td>
+<td>LGPL-2.1</td>
+</tr>
+<tr>
+<td><code>EEPROM</code></td>
+<td>1.0</td>
+<td>LGPL-2.1</td>
+</tr>
+<tr>
+<td><code>ESP Async WebServer</code></td>
+<td>1.2.3</td>
+<td>LGPL-3.0</td>
+</tr>
+<tr>
+<td><code>ESPAsyncTCP</code></td>
+<td>1.2.2</td>
+<td>LGPL-3.0</td>
+</tr>
+<tr>
+<td><code>Time</code></td>
+<td>1.6.1</td>
+<td>LGPL-2.1</td>
+</tr>
+<tr>
+<td><code>RF24</code></td>
+<td>1.4.7</td>
+<td>GPL-2.0</td>
+</tr>
+<tr>
+<td><code>espMqttClient</code></td>
+<td>1.4.4</td>
+<td>MIT</td>
+</tr>
+<tr>
+<td><code>ArduinoJson</code></td>
+<td>6.21.3</td>
+<td>MIT</td>
+</tr>
+</tbody>
+</table>
+<h2 id="todo">ToDo</h2>
+<p><a href="https://github.com/lumapu/ahoy/issues/142">See this post</a></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../display-pinouts/" class="btn btn-neutral float-left" title="Display pinouts"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../coding-guidelines/" class="btn btn-neutral float-right" title="Coding guidelines">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/stefan123t/heumeiles-docs" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../display-pinouts/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../coding-guidelines/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://unpkg.com/mermaid@8.8.2/dist/mermaid.min.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

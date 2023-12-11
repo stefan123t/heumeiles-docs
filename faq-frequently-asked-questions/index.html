@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://stefan123t.github.io/heumeiles-docs/faq-frequently-asked-questions/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>FAQ Häufig gestellte Fragen - Ahoy Docs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "FAQ H\u00e4ufig gestellte Fragen";
+        var mkdocs_page_input_path = "faq-frequently-asked-questions.md";
+        var mkdocs_page_url = "/heumeiles-docs/faq-frequently-asked-questions/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+<img src=https://stefan123t.github.io/heumeiles-docs//img/logo.png>
+    <a href=".." class="icon icon-home"> Ahoy Docs
+</a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="..">Welcome to MkDocs</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">External Links</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="" href="https://github.com/lumapu/ahoy/releases">Releases</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="https://lumapu.github.io/ahoy/index.html">Web Installer/Console</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="https://github.com/lumapu/ahoy/issues">Create an Issue</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="https://github.com/lumapu/ahoy/discussions">Join a Discussion</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Hardware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../getting-started-ESP8266/">Getting Started with an ESP8266</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../hardware-serial-numbers/">Hardware Serial Numbers</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../rf-module-cmt2300a/">Rf module cmt2300a</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../display-pinouts/">Display pinouts</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Software</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../getting-started-ahoy/">Getting Started with Ahoy</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../coding-guidelines/">Coding guidelines</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../readme-ahoy/">Readme ahoy</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../prometheus_ep_description/">Prometheus Endpoint</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../user-manual-ahoy/">User Manual AhoyDTU (on ESP8266)</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Hoymiles</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../hoymiles-format-description/">Hoymiles Format Description</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../protocol/">Protocol</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mi-inverter/">Mi inverter</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Protocol</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../protocol/">Protocol</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Troubleshooting</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">FAQ Häufig gestellte Fragen</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#allgemeines">Allgemeines</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#welche-modelle-werden-unterstutzt">Welche Modelle werden unterstützt</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#welche-gerate-funktionen-werden-nicht-unterstutzt">Welche Geräte / Funktionen werden nicht unterstützt</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#welche-kommandos-werden-von-der-dtu-unterstutzt">Welche Kommandos werden von der DTU unterstützt</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#welche-entfernung-unterstutzen-die-nrf24l01-funkmodule">Welche Entfernung unterstützen die nRF24L01+ Funkmodule</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#modbus-via-tcp-oder-rs485">Modbus via TCP oder RS485</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#was-sind-sunspec-und-victron">Was sind SunSpec und Victron</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#was-ist-drm">Was ist DRM</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#was-ist-antireflux">Was ist AntiReflux</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#welche-modbus-register-unterstutzt-die-dtu-pro">Welche Modbus Register unterstützt die DTU-Pro</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#was-ist-mqtt">Was ist MQTT</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#welche-mqtt-broker-home-automation-systeme-verwendet-ihr">Welche MQTT Broker / Home Automation Systeme verwendet ihr</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#hardware">Hardware</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#welche-hardware-brauche-ich-fur-die-verschiedenen-software-projekte">Welche Hardware brauche ich für die verschiedenen Software Projekte</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#welche-hardware-gibt-es-und-welche-software-lauft-darauf">Welche Hardware gibt es und welche Software läuft darauf</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#welches-nrf24l01-modul-verwendet-ihr">Welches nRF24L01+ Modul verwendet ihr ?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#welchen-mikroprozessor-empfehlt-ihr">Welchen Mikroprozessor empfehlt ihr ?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#wie-ist-das-gerat-mit-spannung-zu-versorgen">Wie ist das Gerät mit Spannung zu versorgen</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#software-installation">Software / Installation</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#welche-software-gibt-es-und-mit-welcher-hardware-lauft-sie">Welche Software gibt es und mit welcher Hardware läuft sie</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#bin-files-fur-ahoy-dtu">BIN Files für Ahoy-DTU</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#platform-io-installieren">Platform IO installieren</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#wie-definiere-ich-die-serielle-schnittstelle-fur-den-esp7266esp32">Wie definiere ich die Serielle Schnittstelle für den ESP7266/ESP32</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#wie-kann-ich-den-esp8266-konfigurieren">Wie kann ich den ESP8266 konfigurieren</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#wo-finde-ich-den-original-source-code-von-hoymiles">Wo finde ich den original Source Code von Hoymiles</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#welche-experimentellen-software-funktionen-sind-bisher-noch-nicht-im-standard-enthalten-pull-request-merge">Welche EXPERIMENTELLEN Software Funktionen sind bisher noch nicht im Standard enthalten (Pull Request / Merge)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#welche-software-funktionen-sind-geplant">Welche Software Funktionen sind geplant</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#konfiguration">Konfiguration</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#eintragen-der-seriennummer">Eintragen der Seriennummer</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sn-eintragen-muss-das-ull-stehen-bleiben-im-source">S/N eintragen, muss das "ULL" stehen bleiben (im Source) ?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#wieviele-wechselrichter-unterstutzt-die-software">Wieviele Wechselrichter unterstützt die Software</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#warum-antwortet-der-wechselrichter-nicht">Warum antwortet der Wechselrichter nicht</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Assorted Pages</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Hardware</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Hardware/ESP-DTU_Platinenlayout/">ESP DTU Platinenlayout</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Hardware/cmt2300a-breakout-board/">Cmt2300a breakout board</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Hoymiles</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Hoymiles/hm-inverter-dtu-pro/">Hm inverter dtu pro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Hoymiles/hms-hmt-inverter-dtu-pro-s/">Hms hmt inverter dtu pro s</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Hoymiles/hms-wifi-inverter-dtu-bi/">Hms wifi inverter dtu bi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Hoymiles/mi-inverter-dtu-wlite/">Mi inverter dtu wlite</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Ahoy Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>Troubleshooting &raquo;</li>
+      <li class="breadcrumb-item active">FAQ Häufig gestellte Fragen</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/stefan123t/heumeiles-docs/edit/main/docs/faq-frequently-asked-questions.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="faq-haufig-gestellte-fragen">FAQ Häufig gestellte Fragen</h1>
+<ul>
+<li>
+<p>Die Wechselrichter senden nur bei Tag, wenn auch eine Stromproduktion durch die PV Module stattfindet (DC Spannung &gt;16V an einem MPPT-Eingang). </p>
+</li>
+<li>
+<p>Es ist ratsam, einen Elko größer 10µF an die Stromversorgung des nRF24L01+ Moduls zu löten.</p>
+</li>
+<li>
+<p>Beim Wemos D1 mini ESP8266 Modul sollte bei Problemen der IRQ Pin statt an D3 an D1 / D2 angelötet werden und dies auch in der System Config eingetragen werden.</p>
+</li>
+<li>
+<p>Bei Problemen am besten ein fertiges .bin aus den GitHub Actions verwenden.</p>
+</li>
+<li>
+<p>Die Sendeleistung nicht gleich auf HIGH oder gar MAX stellen. LOW oder MIN ist in den meisten Fällen die bessere Wahl, da es einen geringeren Einbruch der Versorgungspannung beim Senden bewirkt. </p>
+</li>
+<li>
+<p>Binaries für AhoyDTU gibt es unter: https://github.com/lumapu/ahoy/actions/workflows/compile_esp8266.yml 
+oder https://github.com/lumapu/ahoy/actions/workflows/compile_development.yml </p>
+</li>
+<li>
+<p>Man muss für die o.g. Binaries bei GitHub eingeloggt sein. Die Anmeldung ist kostenlos.</p>
+</li>
+<li>
+<p>Das erste Flashen kann z.B. mit dem esp flasher erfolgen: https://www.espressif.com/sites/default/files/tools/flash_download_tool_3.9.3.zip</p>
+</li>
+<li>
+<p>Danach kann für Updates die .bin Datei einfach per OTA hochgeladen werden.</p>
+</li>
+<li>
+<p>Falls bei Jemandem der ESP nach dem Flashen nicht mehr startet, im Support melden.
+  Es scheint bei neueren Versionen des esp flasher Tools bei manchen Leuten probleme zu geben (konnte ich bei mir nicht feststellen).</p>
+</li>
+<li>
+<p>Der Haken bei DoNotChgBin muss weg gemacht werden falls er da ist.</p>
+</li>
+<li>
+<p>Wenn gar Nichts geht, ein Erase Flash durchführen und von vorne beginnen.</p>
+</li>
+<li>
+<p>AhoyDTU und OpenDTU brauchen eine korrekte NTP Zeit um den Wechselrichter abzufragen.</p>
+</li>
+<li>
+<p>Man sollte also als erstes sein WLAN eintragen und zum Internet connecten.</p>
+</li>
+<li>
+<p>Man sollte auch etwas bei der max. Panel Power eintragen damit die Irradiation % richtig berechnet werden können.</p>
+</li>
+<li>
+<p>Not available heißt der Wechselrichter antwortet seit min. 5 Minuten nicht auf die üblichen Anfragen durch die AhoyDTU / OpenDTU.</p>
+</li>
+<li>
+<p>Not producing heißt der Wechselrichter hat keine aktuellen Werte zur Leistung übermittelt (d.h. die AC-Leistung &lt;3W).</p>
+</li>
+<li>
+<p>Die Autodiscover Funktion in HomeAssistant wird nur getriggert, wenn auch MQTT Nachrichten gesendet werden, also der Wechselrichter auch Daten sendet.</p>
+</li>
+</ul>
+<p><em>behoben / veraltet</em></p>
+<p>~~* Beim ESP32 Wroom32 (38pol.) ist die empfohlene GPIO-Belegung diese hier und im Setup unter Sytem Config, Pinout (Wemos) folgendermaßen einzutragen:~~
+  * ~~CS=D1 (GPIO5)~~
+  * ~~CE=D2 (GPIO4)~~
+  * ~~IRQ=D0 (GPIO16 - no IRQ!)~~</p>
+<p>~~* Die Warnmeldung "no IRQ" zu GPIO16 gilt nur für den kleinen Bruder ESP8266 (Wemos) und funktioniert beim ESP32 einwandfrei.~~</p>
+<p>~~* Es kann bis zu 30 Minuten dauern, bis der Wechselrichter die erste Antwort auf Anfragen zurücksendet, also nicht gleich nach zwei / drei Minuten Sendeversuchen aufgeben.~~</p>
+<p><strong>OpenDTU</strong></p>
+<ul>
+<li>
+<p>Binaries für OpenDTU kann man hier laden: https://github.com/tbnobody/OpenDTU/actions/workflows/build.yml</p>
+</li>
+<li>
+<p>Bei OpenDTU: </p>
+</li>
+<li>die opendtu-generic.bin,</li>
+<li>die bootloader_dio_40m.bin kommt nach 0x1000,</li>
+<li>die partitions.bin nach 0x8000,</li>
+<li>die boot_app0.bin nach 0xe000 </li>
+<li>und das eigentliche Programm dann nach 0x10000.
+  Beim Update wird nur noch das eigentliche Programm geflasht. </li>
+</ul>
+<!--
+# FAQ  
+
+## Inhaltsverzeichnis
+
+- [FAQ Häufig gestellte Fragen](#faq-häufig-gestellte-fragen)
+- [FAQ Frequently Asked Questions](#faq-frequently-asked-questions)
+  - [Inhaltsverzeichnis](#inhaltsverzeichnis)
+  - [Allgemeines](#allgemeines)
+    - [Welche Modelle werden unterstützt](#welche-modelle-werden-unterstützt)
+    - [Welche Geräte / Funktionen werden nicht unterstützt](#welche-geräte--funktionen-werden-nicht-unterstützt)
+    - [Welche Kommandos werden von der DTU unterstützt](#welche-kommandos-werden-von-der-dtu-unterstützt)
+    - [Welche Entfernung unterstützen die nRF24L01+ Funkmodule](#welche-entfernung-unterstützen-die-nrf24l01-funkmodule)
+    - [Modbus via TCP oder RS485](#modbus-via-tcp-oder-rs485)
+    - [Was sind SunSpec und Victron](#was-sind-sunspec-und-victron)
+    - [Was ist DRM](#was-ist-drm)
+    - [Was ist AntiReflux](#was-ist-antireflux)
+    - [Welche Modbus Register unterstützt die DTU-Pro](#welche-modbus-register-unterstützt-die-dtu-pro)
+    - [Was ist MQTT](#was-ist-mqtt)
+    - [Welche MQTT Broker / Home Automation Systeme verwendet ihr](#welche-mqtt-broker--home-automation-systeme-verwendet-ihr)
+  - [Hardware](#hardware)
+    - [Welche Hardware brauche ich für die verschiedenen Software Projekte](#welche-hardware-brauche-ich-für-die-verschiedenen-software-projekte)
+    - [Welche Hardware gibt es und welche Software läuft darauf](#welche-hardware-gibt-es-und-welche-software-läuft-darauf)
+    - [Welches nRF24L01+ Modul verwendet ihr ?](#welches-nrf24l01-modul-verwendet-ihr-)
+    - [Welchen Mikroprozessor empfehlt ihr ?](#welchen-mikroprozessor-empfehlt-ihr-)
+    - [Wie ist das Gerät mit Spannung zu versorgen](#wie-ist-das-gerät-mit-spannung-zu-versorgen)
+  - [Software / Installation](#software--installation)
+    - [Welche Software gibt es und mit welcher Hardware läuft sie](#welche-software-gibt-es-und-mit-welcher-hardware-läuft-sie)
+    - [BIN Files für Ahoy-DTU](#bin-files-für-ahoy-dtu)
+    - [Platform IO installieren](#platform-io-installieren)
+    - [Wie definiere ich die Serielle Schnittstelle für den ESP7266/ESP32](#wie-definiere-ich-die-serielle-schnittstelle-für-den-esp7266esp32)
+    - [Wie kann ich den ESP8266 konfigurieren](#wie-kann-ich-den-esp8266-konfigurieren)
+    - [Wo finde ich den original Source Code von Hoymiles](#wo-finde-ich-den-original-source-code-von-hoymiles)
+    - [Welche **EXPERIMENTELLEN** Software Funktionen sind bisher noch nicht im Standard enthalten (Pull Request / Merge)](#welche-experimentellen-software-funktionen-sind-bisher-noch-nicht-im-standard-enthalten-pull-request--merge)
+    - [Welche Software Funktionen sind geplant](#welche-software-funktionen-sind-geplant)
+  - [Konfiguration](#konfiguration)
+    - [Eintragen der Seriennummer](#eintragen-der-seriennummer)
+    - [S/N eintragen, muss das "ULL" stehen bleiben (im Source) ?](#sn-eintragen-muss-das-ull-stehen-bleiben-im-source-)
+    - [Wieviele Wechselrichter unterstützt die Software](#wieviele-wechselrichter-unterstützt-die-software)
+    - [Warum antwortet der Wechselrichter nicht](#warum-antwortet-der-wechselrichter-nicht)
+
+------------------------------------------------------------------------------------------
+-->
+
+<h2 id="allgemeines">Allgemeines</h2>
+<p>Herzlich wilkommen zu den aktuellen Faqs, die aktuell noch in der Entwicklung sind und einen kleinen Überblick über das Projekt geben sollen </p>
+<p>Vielleicht könnt Ihr Bitte mal so die letzten Beiträge durchgehen und einiges als FAQs mit aufnehmen in der Hoffnung, dass es nicht täglich neu gefragt wird ?</p>
+<p>Das könnte vielleicht auch jemand machen, der aktuell nicht mit entwickelt, aber sich gut mit github auskennt ?
+Vielleicht auch 1 Dokument für alle Sourcen zusammen - denn einiges wäre ja Allgemeingültig ?</p>
+<p>Bitte im entsprechenden Forums Beitrag Hilfe anbieten bzw. weitere Entwicklung hierzu diskutieren.</p>
+<h3 id="welche-modelle-werden-unterstutzt">Welche Modelle werden unterstützt</h3>
+<p>Tabelle der Hersteller &amp; Modelle</p>
+<p>Alles Wechselrichter die mit nRF24L01+ Modulen per 2.4GHz und ESB (Enhanced Shock Burst) von Nordic Semiconductors erreicht werden kann.</p>
+<p>Aktuell unterstützte Modelle:
+- ESP8266
+- Arduino Nano (schon lange nicht mehr aktualisiert)
+- Raspberry Pi</p>
+<h3 id="welche-gerate-funktionen-werden-nicht-unterstutzt">Welche Geräte / Funktionen werden nicht unterstützt</h3>
+<ul>
+<li>Werden Hoymiles HMT und HMS auch unterstützt ?</li>
+</ul>
+<p>Nein HMT und HMS verwenden ein anderes Funkmodul und können daher (vorerst) auch nicht unterstützt werden.
+Ob die beiden Modelle auch die selben Kommandos verwenden ist bisher unbekannt. </p>
+<ul>
+<li>Wird DTU-Pro-S auch unterstützt ?</li>
+</ul>
+<p>Die DTU-Pro S ist für die o.g. Hoymiles HMT &amp; HMS Modelle gebaut und verwendet ebenfalls ein anderes Funkmodul.
+Sie wird also ebenfalls auf absehbare Zeit nicht unterstützt.</p>
+<h3 id="welche-kommandos-werden-von-der-dtu-unterstutzt">Welche Kommandos werden von der DTU unterstützt</h3>
+<ul>
+<li>Statusabfrage</li>
+<li>detaillierte Statusabfrage der aktuellen Werte</li>
+<li>allgemeine Hardware / Software Informationen</li>
+<li>Alarmmeldungen</li>
+<li>alle Meldungen seit der letzten Nacht</li>
+<li>neue Meldungen</li>
+<li>Kontrollkommandos</li>
+<li>Start des Wechselrichters (Boot)</li>
+<li>Stop des Wechselrichters (Shutdown)</li>
+<li>Restart des Wechselrichters (Reboot)</li>
+<li>Power Limit (PowerLimit)</li>
+<li>Power Factor (PowerFactor)</li>
+<li>Parameter setzen</li>
+<li>Netz Profil (GridProfile)</li>
+</ul>
+<h3 id="welche-entfernung-unterstutzen-die-nrf24l01-funkmodule">Welche Entfernung unterstützen die nRF24L01+ Funkmodule</h3>
+<p>Es sind scheint unterschiedliche Reichweiten, je nach Gegebenheit, zu geben.
+Ich denke ein erster Richtwert wären Sichtkontakt bis zu 10m
+Leichte Wände wie Holz, Ziegel etc. bis zu 3m
+Alles weiteren Wände eventuell nur 1m</p>
+<p>Der Abstand zwischen einem HM-600 war nur knapp 2 m, und durch die Holzdecke + Schindeln.</p>
+<h3 id="modbus-via-tcp-oder-rs485">Modbus via TCP oder RS485</h3>
+<p>Wird Modbus für Zähler auch unterstützt ?</p>
+<h3 id="was-sind-sunspec-und-victron">Was sind SunSpec und Victron</h3>
+<p>SunSpec ist das, was z.B. SMA und Fronius sprechen um die WR zu regeln, du bekommst Werte vom WR und eine Steuerung wie z.B. Victron kann entsprechend nach Batteriestand und Hausverbrauch die Leistung reduzieren, so dass du Nulleinspeisung fahren kannst basiert auf Modbus, hat aber noch einige Register zur Identifikation zusätzlich</p>
+<h3 id="was-ist-drm">Was ist DRM</h3>
+<p>DRM ist ein Hardwareport, der für Australien entwickelt ist, da musst mit Widerständen und Schaltern gegen + und - Schalten, bisher keine vernünftigen Schaltungen gefunden, SunSpec ist nur möglich über RS485 wenn nicht Zero-Export aktiv ist, da der RS485 Port dann in den Slavemode geht und sonst mit dem Zähler/Messgerät als Master arbeitet</p>
+<p><a href="faq/DRM-controlbox.png">DRM Control Box</a>
+<a href="faq/DRM-status.png">DRM Modes</a></p>
+<h3 id="was-ist-antireflux">Was ist AntiReflux</h3>
+<h3 id="welche-modbus-register-unterstutzt-die-dtu-pro">Welche Modbus Register unterstützt die DTU-Pro</h3>
+<p>In der Dokumentation zum ModBus Protokoll [1] wird folgende Liste von 
+Registern angegeben, hängt das eventuell miteinander zusammen ?</p>
+<p>4.3.2 Microinverter Data Register List</p>
+<p>The following registers provide a microinverter data register list, 
+which can be read-only with the function code <code>0x03</code></p>
+<details><summary>Table Microinverter Data Register List</summary>
+<p>
+
+| Registers | Name             | Decimal | Units | Remark |
+| --------- | ---------------- | ------- | ----- | ------------------------------------------------------------ |
+| 0x1000    | Data Type        | /       | /     | Default, 0x3C                                                |
+| 0x1001    | Microinverter SN | /       | /     | 12-digit decimal number Big-Endian For example, 116151200012 |
+| 0x1002    | Microinverter SN | /       | /     | 12-digit decimal number Big-Endian For example, 116151200012 |
+| 0x1003    | Microinverter SN | /       | /     | 12-digit decimal number Big-Endian For example, 116151200012 |
+| 0x1004    | Microinverter SN | /       | /     | 12-digit decimal number Big-Endian For example, 116151200012 |
+| 0x1005    | Microinverter SN | /       | /     | 12-digit decimal number Big-Endian For example, 116151200012 |
+| 0x1006    | Microinverter SN | /       | /     | 12-digit decimal number Big-Endian For example, 116151200012 |
+| 0x1007    | Port Number      | /       | /     |                                                              |
+| 0x1008    | PV Voltage       | 1       | V     |                                                              |
+| 0x1009    | PV Voltage       | 1       | V     |                                                              |
+| 0x100A    | PV Current       | 1/2     | A     | 1 for MI Series, 2 for HM Series                             |
+| 0x100B    | PV Current       | 1/2     | A     | 1 for MI Series, 2 for HM Series                             |
+| 0x100C    | Grid Voltage     | 1       | V     |                                                              |
+| 0x100D    | Grid Voltage     | 1       | V     |                                                              |
+| 0x100E    | Grid frequency   | 2       | Hz    |                                                              |
+| 0x100F    | Grid frequency   | 2       | Hz    |                                                              |
+| 0x1010    | PV Power         | 1       | W     |                                                              |
+| 0x1011    | PV Power         | 1       | W     |                                                              |
+| 0x1012    | Today Production | /       | Wh    |                                                              |
+| 0x1013    | Today Production | /       | Wh    |                                                              |
+| 0x1014    | Total Production | /       | Wh    |                                                              |
+| 0x1015    | Total Production | /       | Wh    |                                                              |
+| 0x1016    | Total Production | /       | Wh    |                                                              |
+| 0x1017    | Total Production | /       | Wh    |                                                              |
+| 0x1018    | Temperature      | 1       | °C    | Microinverter internal temperature                           |
+| 0x1019    | Temperature      | 1       | °C    | Microinverter internal temperature                           |
+| 0x101A    | Operating Status | /       | /     |                                                              |
+| 0x101B    | Operating Status | /       | /     |                                                              |
+| 0x101C    | Alarm Code       | /       | /     |                                                              |
+| 0x101D    | Alarm Code       | /       | /     |                                                              |
+| 0x101E    | Alarm Count      | /       | /     |                                                              |
+| 0x101F    | Alarm Count      | /       | /     |                                                              |
+| 0x1020    | Link Status      | /       | /     | Communication status with DTU                                |
+| 0x1021    | /                | /       | /     | Fixed, 0x07                                                  |
+| 0x1022    | Reserved         | /       | /     |                                                              |
+| 0x1023    | Reserved         | /       | /     |                                                              |
+| 0x1024    | Reserved         | /       | /     |                                                              |
+| 0x1025    | Reserved         | /       | /     |                                                              |
+| 0x1026    | Reserved         | /       | /     |                                                              |
+| 0x1027    | Reserved         | /       | /     |                                                              |
+| 0x1028    | Data Type        | /       | /     | Default, 0x3C                                                |
+| 0x1029    |                  | /       | /     |                                                              |
+</p>
+</details>
+
+<p>Die Daten können offenbar mit dem entsprechenden <code>0x03</code> Kommando 
+angefordert werden und aus der entsprechenden <code>0x03</code> Antwort entnommen 
+werden:</p>
+<p>4.2.3 Read Device Data</p>
+<details><summary>Tables Read Device Data</summary>
+<p>
+
+* Command sending format
+
+| Name             | Length | Value | Remark        |
+| ---------------- | ------ | ----- | ------------- |
+| Address          | 1      |       | RS485 Address |
+| Function Code    | 1      | 0x03  |               |
+| Register Address | 2      |       | Big-Endian    |
+| Register Count   | 2      |       | Big-Endian    |
+| CRC              | 2      |       | CRC16         |
+
+* Command response format (if success)
+
+| Name            | Length | Value | Remark        |
+| --------------- | ------ | ----- | ------------- |
+| Address         | 1      |       | RS485 Address |
+| Function Code   | 1      | 0x03  |               |
+| Data Length     | 2      |       |               |
+| Data 1          | 2      |       | Big-Endian    |
+| Data 2          | 2      |       | Big-Endian    |
+| ......          |        |       |               |
+| CRC             | 2      |       | CRC16         |
+
+* Command response format (if failed)
+
+| Name            | Length | Value | Remark        |
+| --------------- | ------ | ----- | ------------- |
+| Address         | 1      |       | RS485 Address |
+| Function Code   | 1      | 0x83  |               |
+| Wrong Data Code | 1      | 0x01  |               |
+| CRC             | 2      |       | CRC16         |
+</p>
+</details>
+
+<p>[1] 
+https://www.mikrocontroller.net/attachment/552319/Technical-Note-Modbus-implementation-using-3Gen-DTU-Pro-V1.2.pdf</p>
+<h3 id="was-ist-mqtt">Was ist MQTT</h3>
+<p>Das Protokoll ( Message Queuing Telemetry Transport ) ist ein offenes Netzwerkprotokoll für Machine-to-Machine-Kommunikation (M2M), das die Übertragung von Telemetriedaten in Form von Nachrichten zwischen Geräten ermöglicht, trotz hoher Verzögerungen oder beschränkter Netzwerke.
+Es ermöglich dem Wechselrichter Inforamtionen an einen Dienst zu senden, die dort abgegriffen werden können.</p>
+<h3 id="welche-mqtt-broker-home-automation-systeme-verwendet-ihr">Welche MQTT Broker / Home Automation Systeme verwendet ihr</h3>
+<ul>
+<li>Home Assistant</li>
+<li>Openhab</li>
+<li>InfluxDB</li>
+</ul>
+<hr />
+<h2 id="hardware">Hardware</h2>
+<h3 id="welche-hardware-brauche-ich-fur-die-verschiedenen-software-projekte">Welche Hardware brauche ich für die verschiedenen Software Projekte</h3>
+<p>Reicht ein ESP8266 mit 1MB oder muss es unbedingt ein ESP8266 mit 4MB 
+sein ?</p>
+<ul>
+<li>ESP8266 mit 4MB Flash ist empfohlen</li>
+<li>Raspberry Pi</li>
+<li>ESP32 mit OpentDTU</li>
+<li>Arduino Nano (aktuell nicht gepflegt, daher u.a. kein Active PowerLimit)</li>
+</ul>
+<h3 id="welche-hardware-gibt-es-und-welche-software-lauft-darauf">Welche Hardware gibt es und welche Software läuft darauf</h3>
+<table>
+<thead>
+<tr>
+<th>Hardware</th>
+<th>Software (Pfad)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arduino nano</td>
+<td>Ahoy DTU <code>tools/nano</code></td>
+</tr>
+<tr>
+<td>ESP8266</td>
+<td>Ahoy DTU <code>tools/esp8266</code></td>
+</tr>
+<tr>
+<td>ESP8266</td>
+<td>Ahoy DTU <code>tools/HoyDtuSim</code></td>
+</tr>
+<tr>
+<td>ESP8266</td>
+<td>Ahoy DTU <code>tools/NRF24_SendRcv</code></td>
+</tr>
+<tr>
+<td>ESP32</td>
+<td>Open DTU <a href="https://github.com/tbnobody/OpenDTU/">tbnobody/OpenDTU</a></td>
+</tr>
+<tr>
+<td>Raspberry Pi</td>
+<td>Ahoy DTU <code>tools/rpi</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="welches-nrf24l01-modul-verwendet-ihr">Welches nRF24L01+ Modul verwendet ihr ?</h3>
+<p>Muß es ein nrf24L01+ sein oder funktioniert auch ein nrf24L01 (ohne Plus) ?</p>
+<ul>
+<li>nrf24L01+ </li>
+<li>DollaTek 2Pcs NRF24L01 + PA + LNA Funk-Transceiver-Modul 2.4G</li>
+</ul>
+<p>Nach den bisherigen Erfahrungen muß es ein <code>+</code> Modell sein.
+Mit der NRF24 Bibliothek kann man das Modell mit printDetails() ausgeben lassen.</p>
+<p>Ich will mir eines bestellen, wo gibt es eine sichere Quelle ?</p>
+<p>Die Module die aktuell bei AZDelivery (Amazon) und Makershop (ebay) angeboten werden scheinen i.d.R. zu funktionieren.</p>
+<h3 id="welchen-mikroprozessor-empfehlt-ihr">Welchen Mikroprozessor empfehlt ihr ?</h3>
+<p>ESP32 (OpenDTU) oder ESP8266 (Ahoy-DTU) sind beide zu empfehlen, da sie bereits eine WLAN / WiFi Antenne eingebaut haben.
+Der Unterschied liegt ein wenig am Preis und welche Software man darauf laufen lassen möchte.
+Wer bereits einen Raspberry Pi in Betrieb hat, der nahe genug an den Wechselrichtern ist, kann auch diesen direkt nutzen.
+Auf dem Raspberry Pi sind Änderungen am Code nicht immer mit einem Software-Update (Flashen) verbunden.
+Historisch wurde auch der Arduino nano für erste Scans beim Reverse-Engineering verwendet.</p>
+<h3 id="wie-ist-das-gerat-mit-spannung-zu-versorgen">Wie ist das Gerät mit Spannung zu versorgen</h3>
+<p>Stabile Stromversorgung ...</p>
+<p>Am besten nimmt man ein Netzteil mit mindestens 1A Ausgangsstrom und einem Micro USB Kabel.
+Am besten nimmt man originale Handyladegeräte z.B. von Samsung oder auch vom Raspberry.
+Je besser die Qualität desto stabiler die Spannung und der Strom --&gt; je stabiler der DTU.</p>
+<p>Es wird empfohlen einen 10/100uF Elko zwischen +5V und GND des NRF24 Moduls zu löten um den entsprechend
+hohen Strombedarf des Moduls beim Senden besser zu unterstützen. Manchmal wird auch empfohlen einen
+10/100nF Tantalkondensator dazu parallel zu schalten um die Spannung zu glätten.</p>
+<hr />
+<h2 id="software-installation">Software / Installation</h2>
+<p>Die Software für den ESP32 (OpenDTU) ist ein bißchen übersichtlicher aufgebaut und wird von Thomas B. (@noby) vorbildlich gewartet.</p>
+<h3 id="welche-software-gibt-es-und-mit-welcher-hardware-lauft-sie">Welche Software gibt es und mit welcher Hardware läuft sie</h3>
+<p>Ahoy auf ESP8266 läuft bei mir mehrfach "im Produktiv-Einsatz" seit Wochen. Damit füttere ich die InfluxDB.</p>
+<p>Software for ESP32 to talk to Hoymiles Inverters
+https://github.com/tbnobody/OpenDTU/</p>
+<p>Software for ESP8266, Raspberr
+https://github.com/grindylow/ahoy</p>
+<p>https://github.com/DanielR92/ahoy/tree/main/tools/rpi</p>
+<table>
+<thead>
+<tr>
+<th>Software (Pfad)</th>
+<th>Hardware</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ahoy DTU <code>tools/nano</code></td>
+<td>Arduino nano</td>
+</tr>
+<tr>
+<td>Ahoy DTU <code>tools/esp8266</code></td>
+<td>ESP8266</td>
+</tr>
+<tr>
+<td>Ahoy DTU <code>tools/HoyDtuSim</code></td>
+<td>ESP8266</td>
+</tr>
+<tr>
+<td>Ahoy DTU <code>tools/NRF24_SendRcv</code></td>
+<td>ESP8266</td>
+</tr>
+<tr>
+<td>Open DTU <a href="https://github.com/tbnobody/OpenDTU/">tbnobody/OpenDTU</a></td>
+<td>ESP32</td>
+</tr>
+<tr>
+<td>Ahoy DTU <code>tools/rpi</code></td>
+<td>Raspberry Pi</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bin-files-fur-ahoy-dtu">BIN Files für Ahoy-DTU</h3>
+<p>Wo und wie kommt man direkt ohne Entwicklungsumgebung an die .bin ?</p>
+<p>Wo liegen die verschiedenen Versionen der .bin´s ?</p>
+<p>Den aktuellen Build bekommnt man für den ESP8266 unter: 
+https://nightly.link/lumapu/ahoy/workflows/compile_esp8266/main/esp8266.zip</p>
+<p>Dort im Bereich Actions findet man den Download, man muss man sich allerdings bei Github anmelden.
+Ein Release wird aktuell noch nicht gebaut und die BIN Files sind auch im Master Branch mit Vorsicht zu genießen.
+Man sollte ggf. die aktuellsten Commits / Merge Requests kontrollieren bzw. die Issues lesen.</p>
+<h3 id="platform-io-installieren">Platform IO installieren</h3>
+<h3 id="wie-definiere-ich-die-serielle-schnittstelle-fur-den-esp7266esp32">Wie definiere ich die Serielle Schnittstelle für den ESP7266/ESP32</h3>
+<ul>
+<li>unter Linux</li>
+</ul>
+<p>Mit <code>upload_port = /dev/ttyUSB0</code> in der platformio.ini unter <code>[env:d1_mini]</code> und/oder <code>[env:node_mcu_v2]</code></p>
+<p>Kommt der Fehler <code>could not open port</code> muß man noch die Berechtigung anpassen,
+der Benutzer muss in der dialout Gruppe sein unter Linux. </p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>adduser<span class="w"> </span>&lt;mein_nutzer&gt;<span class="w"> </span>dialout
+</code></pre></div>
+<p>Eventuell muss man sich sogar noch einmal abmelden und wieder anmelden, damit er die Berechtigungen aktualisiert.</p>
+<ul>
+<li>
+<p>unter Mac OS</p>
+</li>
+<li>
+<p>unter Windows</p>
+</li>
+</ul>
+<p>Treiber installieren
+COM1:</p>
+<h3 id="wie-kann-ich-den-esp8266-konfigurieren">Wie kann ich den ESP8266 konfigurieren</h3>
+<p>Der ESP8266 eröffnet einen eigenen AP (wie zum Beispiel die Fritz!Box) 
+Mit diesem muss man sich verbinden wie mit jedem anderen WLAN, 
+dann kann man auf die Einstellungen zugreifen und seine eigenen Zugangsdateien fürs Wlan eingeben.</p>
+<p><code>http://192.168.178.XXX/setup</code></p>
+<h3 id="wo-finde-ich-den-original-source-code-von-hoymiles">Wo finde ich den original Source Code von Hoymiles</h3>
+<p>https://gitee.com/iotloves/hoymiles-DTU-PRO/</p>
+<p>andycao1860-hoymiles-DTU-PRO.zip and 1 more file
+https://we.tl/t-tn7OWR4VdR</p>
+<h3 id="welche-experimentellen-software-funktionen-sind-bisher-noch-nicht-im-standard-enthalten-pull-request-merge">Welche <strong>EXPERIMENTELLEN</strong> Software Funktionen sind bisher noch nicht im Standard enthalten (Pull Request / Merge)</h3>
+<p>SD Card Support
+https://github.com/grindylow/ahoy/compare/main...stefan123t:ahoy:sd_card</p>
+<p>Power Limit via mqtt
+https://github.com/grindylow/ahoy/pull/109</p>
+<p>ESP8266 Async WebServer
+https://github.com/grindylow/ahoy/pull/107</p>
+<h3 id="welche-software-funktionen-sind-geplant">Welche Software Funktionen sind geplant</h3>
+<ul>
+<li>State Machine</li>
+</ul>
+<details><summary>List State Machine Resources</summary>
+<p>
+
+  EMBED WITH ELLIOT: PRACTICAL STATE MACHINES
+  https://hackaday.com/2015/09/04/embed-with-elliot-practical-state-machines/
+
+  Multithreading in C und Arduino
+  http://stefanfrings.de/multithreading_arduino/index.html
+
+  Using State Machines In Your Designs
+  http://aqdi.com/articles/using-state-machines-in-your-designs-3/
+
+  C and C++ Finite State Machine Framework
+  http://block-net.de/Programmierung/cpp/fsm/fsm.html
+
+  SMC The State Machine Compiler
+  http://smc.sourceforge.net/
+
+  Generate production ready source code from UML state diagrams – and activity diagrams!
+  https://www.sinelabore.de/doku.php
+
+  Qfsm - A graphical tool for designing finite state machines
+  http://qfsm.sourceforge.net/
+
+  Professioneller Arduino Code: Variablen, State-Machine und Klassen
+  https://www.youtube.com/watch?v=MERB1lqqyl8
+
+  STATE YOUR INTENTIONS MORE CLEARLY WITH STATE MACHINES
+  https://hackaday.com/2018/04/06/state-your-intentions-more-clearly-with-state-machines/
+  https://www.youtube.com/watch?v=v8KXa5uRavg
+
+  Artikel über Finite State Machines
+  https://www.mikrocontroller.net/topic/248837
+</p>
+</details>
+
+<hr />
+<h2 id="konfiguration">Konfiguration</h2>
+<h3 id="eintragen-der-seriennummer">Eintragen der Seriennummer</h3>
+<p>Die Seriennummern des/der Wechselrichter findet man auf der Rückseite des WRs bzw. der Module.
+Man sollte sich die Seriennummer notieren oder abfotografieren, da man manchmal 
+nach Installation der Module nicht mehr an diese Information kommt.</p>
+<h3 id="sn-eintragen-muss-das-ull-stehen-bleiben-im-source">S/N eintragen, muss das "ULL" stehen bleiben (im Source) ?</h3>
+<p>The datasheet specifies the over-the-air packet format: "Most Significant Byte (MSB) to the left" (cf [datasheet figure 11][3])
+<div class="highlight"><pre><span></span><code>Address := Byte_4, Byte_3, Byte_2, Byte_1, Byte_0
+</code></pre></div>
+("LSByte must be unique") so <code>0x1946107301</code> results in <code>19 46 10 73 01</code> "on the air".</p>
+<p>Old-style NRF Libraries take <code>uint64_t</code> addresses. 
+In this case, the correct address to pass to the library would be <code>(uint64_t)0x1946107301ULL</code>.</p>
+<p>Beispiel direkt im Souce als Kommentar z.B.</p>
+<p>Format:
+<div class="highlight"><pre><span></span><code><span class="cp">#define DTU_RADIO_ID            ((uint64_t)0x1234567801ULL)</span>
+<span class="cp">#define WR1_RADIO_ID ((uint64_t)0x1946107301ULL) </span><span class="c1">// 0x1946107300ULL = WR1</span>
+<span class="cp">#define WR2_RADIO_ID ((uint64_t)0x3944107301ULL) </span><span class="c1">// 0x3944107301ULL = WR2</span>
+</code></pre></div></p>
+<h3 id="wieviele-wechselrichter-unterstutzt-die-software">Wieviele Wechselrichter unterstützt die Software</h3>
+<p>Ich habe mehr als 3 hoymiles HM-..., wird das auch Unterstützt ?
+(muss im Source geändert werden - ich weiss - aber neue Nutzer eher 
+nicht)</p>
+<h3 id="warum-antwortet-der-wechselrichter-nicht">Warum antwortet der Wechselrichter nicht</h3>
+<p>Antwortet der HM-.... auch ohne angeschlossene PV Module bzw. Nachts ?</p>
+<p>Nein, für Nachts muss zum testen ein Netzteil für Gleichspannung angeschlossen werden.
+Der Wechselrichter läßt sich nur bei einer Spannung von &gt; 30V über das Funkmodul erreichen.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../protocol/" class="btn btn-neutral float-left" title="Protocol"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Hardware/ESP-DTU_Platinenlayout/" class="btn btn-neutral float-right" title="ESP DTU Platinenlayout">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/stefan123t/heumeiles-docs" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../protocol/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Hardware/ESP-DTU_Platinenlayout/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://unpkg.com/mermaid@8.8.2/dist/mermaid.min.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
