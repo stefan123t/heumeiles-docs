@@ -37,12 +37,12 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
           
-      - name: Generate Parameter Page
-        run: |
-          cd param-docs
-          python generate-template-param-doc-pages.py # Creates a templated page for each parameter which does not yet have a page
-          tree parameter-pages
-          python concat-parameter-pages.py
+#      - name: Generate Parameter Page
+#        run: |
+#          cd param-docs
+#          python generate-template-param-doc-pages.py # Creates a templated page for each parameter which does not yet have a page
+#          tree parameter-pages
+#          python concat-parameter-pages.py
         
       - name: Store Documentation in the gh-pages branch so it gets pushed to the website
         run: mkdocs gh-deploy
