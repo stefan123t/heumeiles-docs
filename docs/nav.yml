@@ -15,9 +15,9 @@ nav:
   - Hardware:
     - getting-started-ESP8266.md
     - hardware-serial-numbers.md
-    - cmt2300a-breakout-board.md
+    # - Hardware/cmt2300a-breakout-board.md
     - rf-module-cmt2300a.md
-    - ESP-DTU_Platinenlayout.md
+    # - Hardware/ESP-DTU_Platinenlayout.md
     - display-pinouts.md
 
   - Software:
@@ -31,22 +31,22 @@ nav:
     - hoymiles-format-description.md
     - protocol.md
     - mi-inverter.md
-    - mi-inverter-dtu-wlite.md
-    - hm-inverter-dtu-pro.md
-    - hms-hmt-inverter-dtu-pro-s.md
-    - hms-wifi-inverter-dtu-bi.md
+    # - mi-inverter-dtu-wlite.md
+    # - hm-inverter-dtu-pro.md
+    # - hms-hmt-inverter-dtu-pro-s.md
+    # - hms-wifi-inverter-dtu-bi.md
 
   - Protocol:
     - protocol.md
 
-  - Smart Home:
-    - smart-home.md
+  # - Smart Home:
+    # - smart-home.md
 
   - Troubleshooting:
     - faq-frequently-asked-questions.md
 
-  - Old Pages (no longer maintained):
-    - outdated--Integrated-Functions.md
+  # - Old Pages (no longer maintained):
+    # - outdated--Integrated-Functions.md
 
   - Assorted Pages:
     # List all pages which are not covered by above list
