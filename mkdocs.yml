@@ -1,8 +1,8 @@
 site_name: Ahoy Docs
 
-site_url: https://stefan123t.github.io/ahoy-docs/
-repo_url: https://github.com/stefan123t/ahoy-docs
-edit_uri: https://github.com/stefan123t/ahoy-docs/edit/main/docs
+site_url: https://stefan123t.github.io/heumeiles-docs/
+repo_url: https://github.com/stefan123t/heumeiles-docs
+edit_uri: https://github.com/stefan123t/heumeiles-docs/edit/main/docs
 
 theme: 
   name: readthedocs
