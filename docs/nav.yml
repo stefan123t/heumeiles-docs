@@ -1,0 +1,55 @@
+# Configure the navigation using following list
+# and the Awesome Pages Plugin (https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin)
+
+nav:
+  # List all files in the expected order
+  - Getting Started:
+    - index.md
+    - faq-frequently-asked-questions.md
+    - getting-started-ahoy.md
+    - getting-started-ESP8266.md
+    - hardware-serial-numbers.md
+    - coding-guidelines.md
+    - display-pinouts.md
+    - hoymiles-format-description.md
+    - mi-inverter.md
+    - prometheus_ep_description.md
+    - protocol.md
+    - readme-ahoy.md
+    - rf-module-cmt2300a.md
+    - user-manual-ahoy.md
+
+  - External Links:
+    - Releases: https://github.com/lumapu/ahoy/releases
+    - Web Installer/Console: https://lumapu.github.io/ahoy/index.html
+    - Create an Issue: https://github.com/lumapu/ahoy/issues
+    - Join a Discussion: https://github.com/lumapu/ahoy/discussions
+
+  - Hardware:
+    - cmt2300a-breakout-board.md
+    - ESP-DTU_Platinenlayout.md
+
+  - Software:
+    - getting-started-ahoy.md
+
+  - Hoymiles:
+    - hoymiles-format-description.md
+    - mi-inverter-dtu-wlite.md
+    - hm-inverter-dtu-pro.md
+    - hms-hmt-inverter-dtu-pro-s.md
+    - hms-wifi-inverter-dtu-bi.md
+
+  - Protocol:
+    - protocol.md
+
+  - Smart Home:
+    - smart-home.md
+
+
+  - Old Pages (no longer maintained):
+    - outdated--Integrated-Functions.md
+
+  - Assorted Pages:
+    # List all pages which are not covered by above list
+    # Step by step we should migrate those page to the above list
+    - ...
